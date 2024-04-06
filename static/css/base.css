@@ -4,6 +4,7 @@ html {
 
 body {
     background: url('/media/site-header.webp') no-repeat center center fixed;
+    height: calc(100vh - 164px);
     background-size: cover;
     color: #FAFAFA;
     font-family: 'Montserrat';
