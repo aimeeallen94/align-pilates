@@ -10,6 +10,10 @@ body {
     font-family: 'Montserrat';
 }
 
+a {
+    color: #0FA3B1;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -17,4 +21,10 @@ body {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+@media (min-width: 769px) {
+    #welcome-message {
+        padding-top: 20px !important;
+    }
 }
