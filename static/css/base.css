@@ -6,12 +6,28 @@ body {
     background: url('/media/site-header.webp') no-repeat center center fixed;
     height: calc(100vh - 164px);
     background-size: cover;
-    color: #FAFAFA;
+    color: black; /* chosen font colour to be fafafa, black used for testing */
     font-family: 'Montserrat';
 }
 
+.class-list{
+    padding-top: 50px;
+}
+
+
 a {
     color: #0FA3B1;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #0FA3B1;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 /* from Bulma */
