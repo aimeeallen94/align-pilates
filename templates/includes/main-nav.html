@@ -4,7 +4,16 @@
         <h2 class="text-uppercase">Align Pilates</h2></a>
         </div>
         <div class="col-3 col-lg-2 my-auto"><a href="">About</a></div>
-        <div class="col-3 col-lg-2 my-auto"><a href="{% url 'classes' %}">Timetable/Bookings</a></div>
+        <div class="col-3 col-lg-2 my-auto dropdown">
+            <a href="{% url 'classes' %}" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timetable/Bookings</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'classes' %}" class="dropdown-item">View Full Timetable</a>
+            <a href="{% url 'classes' %}?level=fundamentals" class="dropdown-item">Fundamentals</a>
+            <a href="{% url 'classes' %}?level=level_1" class="dropdown-item">Level 1</a>
+            <a href="{% url 'classes' %}?level=level_2" class="dropdown-item">Level 2</a>
+            <a href="{% url 'classes' %}?level=level_3" class="dropdown-item">Level 3</a>
+            <a href="{% url 'classes' %}?level=advanced" class="dropdown-item">Advanced</a>
+        </div></div>
         <div class="col-3 col-lg-2 my-auto">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">

@@ -14,7 +14,9 @@
                         {% if request.user.is_superuser %}
                             <a href="" class="nav-item dropdown">Timetable Management</a>
                         {% endif %}
+                        <div class="dropdown-divider"></div>
                         <a href="" class=" nav-item dropdown">My Profile</a>
+                        <div class="dropdown-divider"></div>
                         <a href="{% url 'account_logout' %}" class="nav-item dropdown">Logout</a>
                     {% else %}
                         <a href="{% url 'account_signup' %}" class="nav-item dropdown">Register</a>

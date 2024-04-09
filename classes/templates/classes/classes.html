@@ -15,7 +15,20 @@
         <div class="row">
             <div class="col text-center mt-3">
                <h2>Timetable</h2>
-               <p>Holder for Filtering of Classes</p>
+               <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+                <form method="GET" action="{% url 'classes' %}">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search by class name, day or teacher">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
                <hr>
             </div>
         </div>
