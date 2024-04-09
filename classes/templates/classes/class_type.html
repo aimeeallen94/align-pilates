@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 offset-2">
+                <div class="row">
+                    <div class="h-100 border-0">
+                        <h2>Class Detail</h2>
+                        <div class="header">{{ class_type.name }}</div>
+                        <div class="body">
+                            <p class="subtitle">{{ class_type.level }}</p>
+                            <p class="text">{{ class_type.description }}</p>
+                            <p class="text">{{ class_type.teacher }}</p>
+                            <p class="text">{{ class_type.time }}</p>
+                            <p class="text">{{ class_type.day }}</p>
+                            {% if class_type.rating %}
+                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ class_type.rating }} / 5</small>
+                            {% else %}
+                                <small class="text-muted">No Rating</small>
+                            {% endif %}
+                        </div>
+                        <div class="footer">
+                            <a href="#" class="btn btn-primary btn-block">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
