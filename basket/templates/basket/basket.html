@@ -21,7 +21,54 @@
             <div class="col">
                 {% if basket_items %}
                     <div class="table-responsive">
-                        {{ basket_items }}
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Class Name</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Grand Total</th>
+                                </tr>
+                            </thead>
+                            {% for item in basket_items %}
+                                <tr>
+                                    <td class="py-3">
+                                        <p class="my-0"><strong>{{ item.booking.name }}</strong></p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.booking.teacher }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        <p class="my-0">{{ item.booking.cost }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.booking.level }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h6><strong>Bag Total: €{{ grand_total|floatformat:2 }}</strong></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'classes' %}" class="btn rounded-0 btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn rounded-0 btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 {% else %}
                     <p>You have not added any classes to your basket yet.</p>
