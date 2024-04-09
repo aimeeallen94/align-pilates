@@ -15,23 +15,67 @@
         <div class="row">
             <div class="col text-center mt-3">
                <h2>Timetable</h2>
-               <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
-                <form method="GET" action="{% url 'classes' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search by class name, day or teacher">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
+               <div class="row">
+                <div class="col-10 offset-1">
+                    <div class="row mt-1 mb-2">
+                        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                            <div class="sort-select-wrapper w-50">
+                                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                    <option value="time_asc" {% if current_sorting == 'time_asc' %}selected{% endif %}>Time (early to late)</option>
+                                    <option value="time_desc" {% if current_sorting == 'time_desc' %}selected{% endif %}>Time (early to late)</option>
+                                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                    <option value="teacher_asc" {% if current_sorting == 'teacher_asc' %}selected{% endif %}>Teacher (A-Z)</option>
+                                    <option value="teacher_desc" {% if current_sorting == 'teacher_desc' %}selected{% endif %}>Teacher (Z-A)</option>
+                                    <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A-Z)</option>
+                                    <option value="level_desc" {% if current_sorting == 'level_desc' %}selected{% endif %}>Level (Z-A)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 order-md-first">
+                            <p class="text-muted mt-3 text-center text-md-left">
+                                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                    <span class="small"><a href="{% url 'classes' %}">Classes Home</a> | </span>
+                                {% endif %}
+                                {{ class_types|length }} Classes{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            </p>
                         </div>
                     </div>
-                </form>
+               <div class="row">
+                    <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+                        <form method="GET" action="{% url 'classes' %}">
+                            <div class="input-group w-100">
+                                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search by class name, day or teacher">
+                                <div class="input-group-append">
+                                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse">
+                                    <ul class="navbar-nav w-auto mx-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-classes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                All Classes</a>
+                                            <div class="dropdown-menu border-0" aria-labelledby="all-classes-link">
+                                                <a href="{% url 'classes' %}?sort=time&direction=asc" class="dropdown-item">By Time</a>
+                                                <a href="{% url 'classes' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                                                <a href="{% url 'classes' %}?sort=teacher&direction=asc" class="dropdown-item ">By Teacher</a>
+                                                <a href="{% url 'classes' %}?sort=level&direction=asc" class="dropdown-item ">By Level</a>
+                                                <a href="{% url 'classes' %}?sort=day_number&direction=asc" class="dropdown-item ">By Day</a>
+                                                <a href="{% url 'classes' %}" class="dropdown-item">All Classes</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <hr>
+                </div>
             </div>
-               <hr>
-            </div>
-        </div>
         <div class="row">
             <div class="class-container col-10 offset-1">
                 <div class="row">
@@ -42,7 +86,7 @@
                         <div class="card h-100 border-0">
                             <div class="card-header">{{ class.name }}</div>
                             <div class="card-body">
-                                <p class="card-subtitle">{{ class.level }}</p>
+                                <p class="card-subtitle"><a href="{% url 'classes' %}?level={{ class.level.name }}">{{ class.level }}</a></p>
                                 <p class="card-text">{{ class.teacher }}</p>
                                 <p class="card-text">{{ class.time }}</p>
                                 <p class="card-text">{{ class.day }}</p>

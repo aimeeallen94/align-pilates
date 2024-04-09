@@ -11,6 +11,24 @@ def all_classes(request):
     class_types = Class_Type.objects.all()
     query = None
     levels = None
+    direction = None
+    sort = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                class_types = class_types.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            class_types = class_types.order_by(sortkey)
+    
+
 
     if request.GET:
         if 'level' in request.GET:
@@ -29,10 +47,13 @@ def all_classes(request):
         queries = Q(name__icontains=query) | Q(teacher__icontains=query) | Q(day__icontains=query)
         class_types = class_types.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'class_types': class_types,
         'search_term': query,
         'current_levels': levels,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'classes/classes.html', context )

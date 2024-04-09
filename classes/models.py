@@ -20,6 +20,7 @@ class Class_Type(models.Model):
     time = models.TimeField()
     day = models.CharField(max_length=9)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    day_number = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name

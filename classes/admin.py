@@ -19,6 +19,7 @@ class Class_TypeAdmin(admin.ModelAdmin):
         'time',
         'rating',
         'cost',
+        'day_number',
     )
 
 admin.site.register(Level, LevelAdmin)
