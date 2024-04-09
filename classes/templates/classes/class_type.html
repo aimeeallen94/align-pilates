@@ -33,6 +33,19 @@
                         <div class="footer">
                             <a href="#" class="btn btn-primary btn-block">Book Now</a>
                         </div>
+                        <form class="form" action="" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <p>Quantity:</p>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="number">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
