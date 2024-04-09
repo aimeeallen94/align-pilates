@@ -3,7 +3,7 @@
         <div class="col-12 col-lg-4 my-auto"><a href="{% url 'home' %}" class="nav-link">
         <h2 class="text-uppercase">Align Pilates</h2></a>
         </div>
-        <div class="col-3 col-lg-2 my-auto"><a href="">About</a></div>
+        <div class="col-3 col-lg-1 my-auto"><a href="">About</a></div>
         <div class="col-3 col-lg-2 my-auto dropdown">
             <a href="{% url 'classes' %}" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timetable/Bookings</a>
         <div class="dropdown-menu">
@@ -19,7 +19,7 @@
             <li class="list-inline-item dropdown">
                 <a class="text-black nav-link" href="#" id="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
-                        <p class="my-0">Member Log In</p>
+                        <p class="my-0">Log In</p>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="options">
@@ -47,7 +47,24 @@
             <div class="dropdown-menu" aria-labelledby="options">
             <li class="list-inline-item dropdown-item"><a href="">Join Now</a></li>
             <li class="list-inline-item dropdown-item"><a href="">Register here for more info!</a></li>
-        </ul></div>
+        </ul>
         </div>
+        <div class="col-3 col-lg-1 my-auto">
+            <li class="list-inline-item">
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_basket' %}">
+                    <div class="text-center">
+                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                        <p class="my-0">
+                            {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                                $0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </div>
+        
     </div>
 </div>
