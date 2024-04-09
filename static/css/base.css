@@ -23,6 +23,10 @@ a {
     color: #0FA3B1;
 }
 
+.class-sort-navbar {
+    color: #fafafa !important;
+}
+
 .class-cards {
     color: black !important;
 }
@@ -36,6 +40,16 @@ a {
     background: #0FA3B1;
     opacity: 0.3;
     z-index: -1;
+}
+
+.back-to-top-button {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #fafafa;
+    color: #0FA3B1;
 }
 
 /* from Bulma */
