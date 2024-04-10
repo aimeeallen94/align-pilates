@@ -26,7 +26,7 @@ class Reservation(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.reservation_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.reservation_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -53,7 +53,7 @@ class ReservationLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the reservation total.
         """
-        self.lineitem_total = self.class_type.price * self.quantity
+        self.lineitem_total = self.class_type.cost * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
