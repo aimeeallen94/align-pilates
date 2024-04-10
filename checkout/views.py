@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -8,6 +9,23 @@ from classes.models import Class_Type
 from basket.contexts import basket_contents
 
 import stripe
+import json 
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -81,8 +99,8 @@ def checkout_success(request, reservation_number):
     """
     save_info = request.session.get('save_info')
     reservation = get_object_or_404(Reservation, reservation_number=reservation_number)
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {reservation_number}. A confirmation \
+    messages.success(request, f'Reservation successfully processed! \
+        Your reservation number is {reservation_number}. A confirmation \
         email will be sent to {reservation.email}.')
 
     if 'basket' in request.session:

@@ -176,3 +176,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+#endpoint_secret = 'whsec_6967799dd4ca34ee1170be73fbdfa6ea3869d1b4d23b19381f2c8000963728e9'
