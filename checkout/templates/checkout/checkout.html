@@ -23,23 +23,24 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Reservation Summary ({{ booking_count }})</p>
+                <p>Reservation Summary {{ item.booking.class_total }}</p>
                 <div class="row">
                     <div class="col-7 offset-2">
-                        <p class="mb-1 mt-0 small text-muted">Class</p>
+                        <p class="mb-1 mt-0">Class</p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                        <p class="mb-1 mt-0">Subtotal</p>
                     </div>
                 </div>
                 {% for item in basket_items %}
                     <div class="row">
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.booking.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ item.booking.quantity }}</p>
+                            <p class="my-0"><strong>{{ item.booking.day }}</strong></p>
+                            <p class="my-0"><strong>{{ item.booking.time }}</strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">${{ item.booking.price }}</p>
+                            <p class="my-0 small">${{ item.booking.cost }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -50,7 +51,7 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
+                        <p class="my-0">${{ booking.total | floatformat:2 }}</p>
                         <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
@@ -109,4 +110,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
 {% endblock %}
