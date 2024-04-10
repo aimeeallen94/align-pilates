@@ -11,10 +11,27 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    basket = request.session.get('basket', {})
-    if not basket:
-        messages.error(request, 'Your shopping bag is empty')
-        return redirect(reverse('classes'))
+    if request.method == "POST":
+        basket = request.session.get('basket', {})
+
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+        }
+        reservation_form = ReservationForm(form_data)
+        if reservation_form.is_valid():
+            reservation_form.save()
+            for item_id, item_data in basket.items(
+                try:
+                    class_type = Class_Type.objects.get(id=item_id)
+            )
+
+    else:
+        basket = request.session.get('basket', {})
+        if not basket:
+            messages.error(request, 'Your shopping bag is empty')
+            return redirect(reverse('classes'))
 
     current_basket = basket_contents(request)
     total = current_basket['grand_total']
