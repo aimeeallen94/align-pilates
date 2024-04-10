@@ -31,8 +31,6 @@
                                     <option value="teacher_desc" {% if current_sorting == 'teacher_desc' %}selected{% endif %}>Teacher (Z-A)</option>
                                     <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A-Z)</option>
                                     <option value="level_desc" {% if current_sorting == 'level_desc' %}selected{% endif %}>Level (Z-A)</option>
-                                    <option value="day_number_asc" {% if current_sorting == 'day_number_asc' %}selected{% endif %}>Day (A-Z)</option>
-                                    <option value="day_number_desc" {% if current_sorting == 'day_number_desc' %}selected{% endif %}>Day (Z-A)</option>
                                 </select>
                             </div>
                         </div>
@@ -69,7 +67,7 @@
                                             <a href="{% url 'classes' %}?sort=teacher&direction=asc" class="dropdown-item ">By Teacher</a>
                                             <a href="{% url 'classes' %}?sort=level&direction=asc" class="dropdown-item ">By Level</a>
                                             <a href="{% url 'classes' %}?sort=day_number&direction=asc" class="dropdown-item ">By Day</a>
-                                            <a href="{% url 'classes' %}" class="dropdown-item">All Classes</a>
+                                            <a href="{% url 'classes' %}?sort=day_number&direction=asc" class="dropdown-item">All Classes</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -91,10 +89,11 @@
                         <div class="card h-100 border-0">
                             <div class="card-header">{{ class.name }}</div>
                             <div class="card-body">
-                                <p class="card-subtitle"><a href="{% url 'classes' %}?level={{ class.level.name }}">{{ class.level }}</a></p>
+                                <p class="card-subtitle">Level: <a href="{% url 'classes' %}?level={{ class.level.name }}">{{ class.level }}</a></p>
                                 <p class="card-text">{{ class.teacher }}</p>
                                 <p class="card-text">{{ class.time }}</p>
                                 <p class="card-text">{{ class.day }}</p>
+                                <p class="card-text">€{{ class.cost }}</p>
                                 {% if class.rating %}
                                 <p class="card-text"><i class="fas fa-star mr-1"></i> {{ class.rating }} / 5</p>
                                 {% else %}

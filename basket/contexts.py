@@ -8,12 +8,13 @@ def basket_contents(request):
     basket_items = []
     grand_total = 0
     class_count = 0
+    cost = 15
     basket = request.session.get('basket', {})
 
     for class_id, class_count in basket.items():
         booking = get_object_or_404(Class_Type, pk=class_id)
-        grand_total = booking.cost
-        class_count += grand_total
+        grand_total = class_count * 15
+        class_count += class_count
         basket_items.append({
             'class_id': class_id,
             'class_count': class_count,
@@ -26,5 +27,4 @@ def basket_contents(request):
         'class_count': class_count,
     }
     
-    print(basket_items)
     return context

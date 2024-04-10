@@ -25,10 +25,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Class Name</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Teacher</th>
                                     <th scope="col">Cost</th>
-                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Level</th>
                                     <th scope="col">Grand Total</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             {% for item in basket_items %}
@@ -37,13 +38,19 @@
                                         <p class="my-0"><strong>{{ item.booking.name }}</strong></p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.booking.teacher }}</p>
-                                    </td>
-                                    <td class="py-3 w-25">
-                                        <p class="my-0">{{ item.booking.cost }}</p>
+                                        <p class="my-0">{{ item.booking.teacher }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.booking.level }}</p>
+                                        <p class="my-0">€{{ item.booking.cost }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.booking.level }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.grand_total }}</p>
+                                    </td>
+                                    <td>
+                                        <a class="remove-item text-danger float-right remove-button" id="remove_{{ item.class_id }}">Remove</a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -79,4 +86,23 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/basket/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
