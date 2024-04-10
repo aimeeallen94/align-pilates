@@ -45,7 +45,7 @@ class Reservation(models.Model):
 class ReservationLineItem(models.Model):
     reservation = models.ForeignKey(Reservation, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     class_type = models.ForeignKey(Class_Type, null=False, blank=False, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False, blank=False, default=0)
+    quantity = models.IntegerField(null=False, blank=False, default=1)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
