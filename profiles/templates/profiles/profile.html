@@ -21,6 +21,20 @@
                 <h3>Profile</h3>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p>Default User Information</p>
+                <form action="{% url 'profile' %}" class="mt-3" method="POST" id="profile-update-info-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="button btn-info">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Reservation History</p>
+                {{ reservations }}
+            </div>
+        </div>
     </div>
     {{ profile }}
 {% endblock %}
