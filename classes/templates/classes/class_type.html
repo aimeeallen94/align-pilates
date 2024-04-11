@@ -43,12 +43,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                {% if request.user.is_superuser %}
+                               <!-- {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a href="{% url 'edit_class' class.id %}">Edit</a> | 
                                         <a class="text-danger" href="{% url 'delete_class' class.id %}">Delete</a>
                                     </small>
-                                {% endif %}
+                                {% endif %} -->
                                 <div class="col-12">
                                     <a href="{% url 'classes' %}" class="btn btn-info">
                                         <span>Continue Browsing</span>
