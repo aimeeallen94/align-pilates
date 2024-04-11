@@ -92,3 +92,26 @@ def add_class_type(request):
     }
 
     return render(request, template, context)
+
+def edit_class(request, class_type_id):
+    """ Edit a class_type in the store """
+    class_type = get_object_or_404(Class_Type, pk=class_type_id)
+    if request.method == 'POST':
+        form = ClassTypeForm(request.POST, request.FILES, instance=class_type)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated class!')
+            return redirect(reverse('class_type', args=[class_type.id]))
+        else:
+            messages.error(request, 'Failed to update class_type. Please ensure the form is valid.')
+    else:
+        form = ClassTypeForm(instance=class_type)
+        messages.info(request, f'You are editing {class_type.name}')
+
+    template = 'classes/edit_class.html'
+    context = {
+        'form': form,
+        'class_type': class_type,
+    }
+
+    return render(request, template, context)
