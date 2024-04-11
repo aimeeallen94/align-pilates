@@ -78,9 +78,9 @@ def add_class_type(request):
     if request.method == 'POST':
         form = ClassTypeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            class_type = form.save()
             messages.success(request, 'Successfully added class!')
-            return redirect(reverse('add_class'))
+            return redirect(reverse('class_type', args=[class_type.id]))
         else:
             messages.error(request, 'Failed to add class. Please ensure the form is valid.')
     else:
@@ -103,7 +103,7 @@ def edit_class(request, class_type_id):
             messages.success(request, 'Successfully updated class!')
             return redirect(reverse('class_type', args=[class_type.id]))
         else:
-            messages.error(request, 'Failed to update class_type. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update class type. Please ensure the form is valid.')
     else:
         form = ClassTypeForm(instance=class_type)
         messages.info(request, f'You are editing {class_type.name}')
@@ -115,3 +115,10 @@ def edit_class(request, class_type_id):
     }
 
     return render(request, template, context)
+
+def delete_class(request, class_type_id):
+    """ Delete a class from the timetable """
+    class_type = get_object_or_404(Class_Type, pk=class_type_id)
+    class_type.delete()
+    messages.success(request, 'Class deleted!')
+    return redirect(reverse('classes'))
