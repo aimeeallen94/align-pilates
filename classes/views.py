@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Class_Type, Level
+from .forms import ClassTypeForm
 
 # Create your views here.
 
@@ -69,3 +71,24 @@ def class_info(request, class_type_id):
     }
 
     return render(request, 'classes/class_type.html', context )
+
+def add_class_type(request):
+    """ Add a class to the timetable """
+
+    if request.method == 'POST':
+        form = ClassTypeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added class!')
+            return redirect(reverse('add_class'))
+        else:
+            messages.error(request, 'Failed to add class. Please ensure the form is valid.')
+    else:
+        form = ClassTypeForm()
+
+    template = 'classes/add_class.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

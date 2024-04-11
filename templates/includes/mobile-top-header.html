@@ -12,7 +12,7 @@
                 <div class="dropdown-item border-0" aria-labelledby="options">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <a href="" class="nav-item dropdown">Timetable Management</a>
+                            <a href="{% url 'add_class' %}" class="nav-item dropdown">Timetable Management</a>
                         {% endif %}
                         <div class="dropdown-divider"></div>
                         <a href="{% url 'profile' %}" class=" nav-item dropdown">My Profile</a>

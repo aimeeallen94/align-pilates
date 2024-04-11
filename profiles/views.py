@@ -16,8 +16,10 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile Updated Successfully!')
-
-    form = UserProfileForm(instance=profile)
+        else:
+            messages.error(request, 'Updating failed, please try again.')
+    else:
+        form = UserProfileForm(instance=profile)
     reservations = profile.reservations.all()
 
     template = 'profiles/profile.html'
