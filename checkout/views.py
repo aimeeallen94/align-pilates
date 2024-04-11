@@ -41,7 +41,11 @@ def checkout(request):
         }
         reservation_form = ReservationForm(form_data)
         if reservation_form.is_valid():
-            reservation = reservation_form.save()
+            reservation = reservation_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            reservation.stripe_pid = pid
+            reservation.original_basket = json.dumps(basket)
+            reservation.save()
             for item_id, item_data in basket.items():
                 try:
                     class_type = Class_Type.objects.get(id=item_id)

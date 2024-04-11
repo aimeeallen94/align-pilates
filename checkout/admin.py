@@ -11,10 +11,12 @@ class ReservationLineItemAdminInline(admin.TabularInline):
 class ReservationAdmin(admin.ModelAdmin):
     inlines = (ReservationLineItemAdminInline,)
 
-    readonly_fields = ('reservation_number', 'date', 'reservation_total',)
+    readonly_fields = ('reservation_number', 'date', 'reservation_total', 
+                        'original_basket', 'stripe_pid',)
 
     fields = ('reservation_number', 'full_name', 'date',
-                'email', 'phone_number', 'reservation_total',)
+                'email', 'phone_number', 'reservation_total',
+                'original_basket', 'stripe_pid',)
 
     list_display = ('reservation_number', 'date', 'full_name',
                     'reservation_total',)
