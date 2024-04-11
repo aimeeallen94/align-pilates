@@ -1,0 +1,1 @@
+Booking Confirmation for Align Pilates. Confirmation Number: {{ order.order_number }}

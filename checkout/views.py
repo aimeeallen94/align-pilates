@@ -89,7 +89,7 @@ def checkout(request):
         try:
             profile = UserProfile.objects.get(user=request.user)
             reservation_form = ReservationForm(initial={
-                'full_name': profile.user.get_full_name(),
+                'full_name': profile.user.username,
                 'email': profile.user.email,
                 'phone_number': profile.default_phone_number,
             })

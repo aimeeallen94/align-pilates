@@ -46,6 +46,7 @@
                <div class="row">
                     <div class="col-8 col-lg-10 my-auto py-1 py-lg-0">
                         <form method="GET" action="{% url 'classes' %}">
+                            {% csrf_token %}
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search by class name, day or teacher">
                                 <div class="input-group-append">

@@ -1,0 +1,22 @@
+Hello {{ reservation.full_name }}!
+
+This is you class booking confirmation of your class(es) with us at Align Pilates. Your booking summary is below:
+
+Reservation Number: {{ reservation.reservation_number }}
+Reservation Date: {{ reservation.date }}
+
+Booking Total: ${{ reservation.reservation_total }}
+Grand Total: ${{ reservation.grand_total }}
+
+As mentioned in the timetable page all classes booked now are for use in this current week if you are booking one class 
+and if you choose to book two classes that is securing your booking for this week and next week.
+
+We've got your phone number on file as {{ reservation.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your booking,
+
+Kindly,
+
+Align Pilates Team
