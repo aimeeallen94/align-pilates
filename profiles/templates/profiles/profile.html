@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profile/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -32,7 +32,40 @@
             </div>
             <div class="col-12 col-lg-6">
                 <p>Reservation History</p>
-                {{ reservations }}
+                <div class="table-responsive reservation-table">
+                    <div class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Reservation Number</th>
+                                <th>Date</th>
+                                <th>Classes</th>
+                                <th>Reservations Total</th>
+                            </tr>
+                        </thead>
+                        <hr>
+                        <tbody>
+                            {% for reservation in reservations %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'reservation_history' reservation.reservation_number %}"
+                                        title="{{ reservation.reservation_number }}">
+                                        {{ reservation.reservation_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ reservation.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for reservation in reservation.lineitems.all %}
+                                                <li class="small">{{ reservation.class_type }} x {{ reservation.quantity }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>{{ reservation.grand_total }}</td>
+                                </tr>
+                            {% endfor%}
+                        </tbody>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import ReservationForm
 from .models import Reservation, ReservationLineItem
 from classes.models import Class_Type
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from basket.contexts import basket_contents
 
 import stripe
@@ -82,7 +84,19 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
-    reservation_form = ReservationForm()
+     # Attempt to prefill the form with any info the user maintains in their profile
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            reservation_form = ReservationForm(initial={
+                'full_name': profile.user.get_full_name(),
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+            })
+        except UserProfile.DoesNotExist:
+            reservation_form = ReservationForm()
+    else:
+        reservation_form = ReservationForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -103,6 +117,23 @@ def checkout_success(request, reservation_number):
     """
     save_info = request.session.get('save_info')
     reservation = get_object_or_404(Reservation, reservation_number=reservation_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the reservation
+        reservation.user_profile = profile
+        reservation.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': reservation.phone_number,
+                'email': reservation.email,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(request, f'Reservation successfully processed! \
         Your reservation number is {reservation_number}. A confirmation \
         email will be sent to {reservation.email}.')

@@ -1,0 +1,14 @@
+#profile-update-info-form input::placeholder,
+#profile-update-info-form {
+    color: #2D3142;
+}
+
+table {
+    color: #fafafa !important;
+}
+
+.reservation-table {
+    max-height: 450px;
+    overflow-y: auto;
+    color: #fafafa !important;
+}

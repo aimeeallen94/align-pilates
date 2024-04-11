@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from checkout.models import Reservation
+
 
 def profile(request):
     """ Display the user's profile. """
@@ -23,6 +25,23 @@ def profile(request):
         'form': form,
         'reservations': reservations,
         'on_profile_page': True,
+    }
+
+    return render(request, template, context)
+
+
+def reservation_history(request, reservation_number):
+    reservation = get_object_or_404(Reservation, reservation_number=reservation_number)
+
+    messages.info(request, (
+        f'This is a previous confirmation for { reservation_number }.'
+        'A confirmation email was sent on the reservation date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'reservation': reservation,
+        'from_profile': True,
     }
 
     return render(request, template, context)

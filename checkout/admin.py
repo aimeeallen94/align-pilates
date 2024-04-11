@@ -14,7 +14,7 @@ class ReservationAdmin(admin.ModelAdmin):
     readonly_fields = ('reservation_number', 'date', 'reservation_total', 
                         'original_basket', 'stripe_pid',)
 
-    fields = ('reservation_number', 'full_name', 'date',
+    fields = ('reservation_number', 'user_profile', 'full_name', 'date',
                 'email', 'phone_number', 'reservation_total',
                 'original_basket', 'stripe_pid',)
 
