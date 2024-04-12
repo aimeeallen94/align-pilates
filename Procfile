@@ -1,0 +1,1 @@
+web: gunicorn align_pilates.wsgi:application
