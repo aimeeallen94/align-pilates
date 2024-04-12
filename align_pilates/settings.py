@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-)s(8+axt9(*z%vhc7%ou7^hn@688q=$zjaxb^&n6hi$$rcf^3)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io', 'align-pilates.heroku.app.com', 'localhost',]
+ALLOWED_HOSTS = ['8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io', 'align-pilates.heroku.app.com', 
+                'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com',]
 
 
 # Application definition
