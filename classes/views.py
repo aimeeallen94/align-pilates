@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from .models import Class_Type, Level
@@ -72,8 +73,12 @@ def class_info(request, class_type_id):
 
     return render(request, 'classes/class_type.html', context )
 
-def add_class_type(request):
+@login_required
+def add_class(request):
     """ Add a class to the timetable """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ClassTypeForm(request.POST, request.FILES)
@@ -93,8 +98,13 @@ def add_class_type(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_class(request, class_type_id):
     """ Edit a class_type in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
     if request.method == 'POST':
         form = ClassTypeForm(request.POST, request.FILES, instance=class_type)
@@ -116,8 +126,13 @@ def edit_class(request, class_type_id):
 
     return render(request, template, context)
 
+@login_required
 def delete_class(request, class_type_id):
     """ Delete a class from the timetable """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
     class_type.delete()
     messages.success(request, 'Class deleted!')
