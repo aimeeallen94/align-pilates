@@ -30,15 +30,15 @@
                     <button class="button btn-info">Update Information</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
-                <p>Reservation History</p>
+            <div class="col-12 col-lg-6 reservation-history-container">
+                <p class="reservation-header tex">Reservation History</p>
                 <div class="table-responsive reservation-table">
                     <div class="table table-sm">
                         <thead>
                             <tr>
-                                <th>Reservation Number</th>
-                                <th>Date</th>
-                                <th>Classes</th>
+                                <th>Reservation Number |</th>
+                                <th>Date |</th>
+                                <th>Classes |</th>
                                 <th>Reservations Total</th>
                             </tr>
                         </thead>
@@ -49,18 +49,18 @@
                                     <td>
                                         <a href="{% url 'reservation_history' reservation.reservation_number %}"
                                         title="{{ reservation.reservation_number }}">
-                                        {{ reservation.reservation_number|truncatechars:6 }}
+                                        {{ reservation.reservation_number|truncatechars:6 }} |
                                         </a>
                                     </td>
-                                    <td>{{ reservation.date }}</td>
+                                    <td>{{ reservation.date }} |</td>
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for reservation in reservation.lineitems.all %}
-                                                <li class="small">{{ reservation.class_type }} x {{ reservation.quantity }}</li>
+                                                <li class="small">{{ reservation.class_type }} x {{ reservation.quantity }} |</li>
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td>{{ reservation.grand_total }}</td>
+                                    <td>{{ reservation.grand_total }} |</td>
                                 </tr>
                             {% endfor%}
                         </tbody>

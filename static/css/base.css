@@ -14,25 +14,107 @@ body {
     height: 164px;
 }
 
+.homepage-navigation,
+.navbar {
+    background-color: #fafafa;
+}
+
+.about-container {
+    background: #0FA3B1;
+    padding-bottom: 50px;
+}
+
+.about-header {
+    padding-left: 50px;
+}
+
 .allauth-inner-content {
     padding-top: 150px;
 }
 
-.card-testimonials {
+.testimonials-header-container {
+    background-color: #fafafa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-row {
+    padding-bottom: 10px;
+}
+
+.testimonials-container {
     color: #343a40;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.register-link,
+.register-link:hover {
+    color: #fafafa;
+
+}
+
+.timetable-header {
+    font-size: 250%;
+}
+
+.search-box {
+    padding-bottom: 20px;
 }
 
 .class-list{
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
+.classes-home-link {
+    color: #343a40 !important;
+    text-decoration: underline;
+}
+
+.class-info-container {
+    background-color: #343a40;
+    opacity: 0.8;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.class-booking-btns {
+    margin-bottom: 10px;
+}
+
+.reservation-history-container {
+    background-color: #fafafa;
+    margin-bottom: 40px;
+}
+
+.reservation-header {
+    color: #343a40;
+    font-weight: bold;
+}
+
+
+button, 
+.btn {
+    margin-bottom: 10px; 
+}
 
 a {
     color: #0FA3B1;
 }
 
+.dropdown-menu {
+    border: 1px solid #0FA3B1;
+}
+
+a:hover,
+.nav-link:hover {
+    color: #0FA3B1;
+    text-decoration: underline;
+}
+
 .class-sort-navbar {
     color: #fafafa !important;
+    text-align: left;
 }
 
 .class-cards {
@@ -183,6 +265,21 @@ a {
     overflow-y: auto;
 }
 
+footer {
+    background-color: #fafafa;
+    color: #0FA3B1;
+    text-align: center;
+    font-size: 80%;
+    height: 100px;
+}
+
+.footer-header {
+    padding-top: 10px;
+}
+.social-icons {
+    padding: 20px 20px 15px 20px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -196,6 +293,31 @@ a {
     #welcome-message {
         padding-top: 20px !important;
     }
+
+    .search-box {
+        width: 100%;
+    }
+    
+    .class-info {
+        max-width: 100%;
+        margin-top: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 578px) {
+    .about-header-font {
+        font-size: 250%;
+    }
+
+    .row {
+        margin-right: 0;
+    }
+
+    .class-cards {
+        padding-left: 60px;
+    }
+    
 }
 
 @media (max-width:991px) {
@@ -206,4 +328,9 @@ a {
     body {
         height: calc(100vh - 100px);
     }
+
+    .nav-row {
+        flex-wrap: nowrap;
+    }
+
 }

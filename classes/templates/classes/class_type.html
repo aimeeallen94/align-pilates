@@ -11,11 +11,11 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container class-info-container">
         <div class="row">
-            <div class="col-12 col-md-8 col-lg-6 offset-2">
+            <div class="col-12 col-md-8 col-lg-6 offset-1">
                 <div class="row">
-                    <div class="h-100 border-0">
+                    <div class="h-100">
                         <h2>Class Detail</h2>
                         <div class="header">{{ class_type.name }}</div>
                         <div class="body">
@@ -25,7 +25,7 @@
                             <p class="text">{{ class_type.time }}</p>
                             <p class="text">{{ class_type.day }}</p>
                             {% if class_type.rating %}
-                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ class_type.rating }} / 5</small>
+                                <small><i class="fas fa-star mr-1"></i>{{ class_type.rating }} / 5</small>
                             {% else %}
                                 <small class="text-muted">No Rating</small>
                             {% endif %}
@@ -50,10 +50,10 @@
                                     </small>
                                 {% endif %} -->
                                 <div class="col-12">
-                                    <a href="{% url 'classes' %}" class="btn btn-info">
+                                    <a href="{% url 'classes' %}" class="btn btn-info class-booking-btns">
                                         <span>Continue Browsing</span>
                                     </a>
-                                    <input type="submit" class="btn btn-info text-uppercase" value="Book Now">
+                                    <input type="submit" class="btn btn-info class-booking-btns" value="Book Now">
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>

@@ -1,4 +1,4 @@
-{}{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block page_header %}
@@ -10,49 +10,71 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
+    <div class="container about-container">
         <div class="row h-100">
-            <div class="col-8 col-md-6 my-auto">
-                <h1 class="display-4">
+            <div class="col-8 col-md-6 my-auto about-header">
+                <h1 class="display-4 about-header-font">
                     About Us
                 </h1>
             </div>
-            <div class="col-12 col-md-10">    
+            <div class="col-12 col-md-10 col-sm-8 mx-auto">    
                 <p> Align Pilates was founded by us, Leah and Catherine in July 2019 right before all of our worlds were
                     turned upside down by the global pandemic. We decided to set up this studio as we both have learned 
                     through personal and professional experience the value of movement and how it can transform not only
                     our physical health but our mental health also.
+                    <br>
+                    Both Catherine and Leah have taken part in Polestar Pilates 1000 hour training and are now very lucky to
+                    both be Polestar instructors after completing their many many certifications in Pilates.
+                    <br>
                     Our ethos in the studio is to move as much as you like while also to move as gently as you need to on
                     any given day. We want our cleints to get as much as they can from this studio whether it be an intense
                     workout or a mellow movement class.
+                    <br>
+                    We welcome all in our studio. Our belief in Pilates is so strong that we think there isn't a person in the
+                    world who wouldn't benefit from Pilates.
+                    <br>
+                    Our community at Glow is ever growing and we always open for new members. If our studio is somewhere you 
+                    would be interested in joining please <a class="font-italic register-link" href="{% url 'account_signup' %}">
+                    <u>register </u></a>here.
                 </p>
             </div>
         </div>
+    </div>
+
+    <div class="container testimonials-container">
+      <div class="testimonials-header-container">
+        <h2 classs="display-4">Kind Words</h2>
+      </div>
         <div class="row card-testimonials">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Sarah</h5>
-                  <p class="card-text">I started Pilates in April 2022 after covid, I had previously joined so many
-                    gyms and never quite felt comfortable there, here in Glow I feel safe to ask questions and that I am
-                    moving within my body's safe limits. I love this place.
-                  </p>
-                  <a href="#" class="btn btn-info">Sarah's Favourite Class Level</a>
+            <div class="col-sm-6 card-row">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text font-italic">"I started Pilates in April 2022 after covid, I had previously joined so many
+                          gyms and never quite felt comfortable there, here in Glow I feel safe to ask questions and that I am
+                          moving within my body's safe limits. I love this place."
+                          <p class="card-text font-weight-normal text-muted text-uppercase">
+                          - Sarah
+                          </p>
+                        </p>
+                        <a href="{% url 'classes' %}?level=level_3" class="btn btn-info">Click here to see Sarah's Favourite Classes</a>
+                    </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Yvonne</h5>
-                  <p class="card-text">If I could move in here I would! Love everything about align. You can get whatever
-                    type of workout you need here, whether it's a tough class or a gentle movement class. I love the laughs
-                    in the studio and just the whole vibe there.
-                  </p>
-                  <a href="#" class="btn btn-info">Yvonne's Favourite Class Level</a>
+              <div class="col-sm-6 card-row">
+                  <div class="card">
+                    <div class="card-body">
+                      <p class="card-text font-italic">"If I could move in here I would! Love everything about align. You can get whatever
+                        type of workout you need here, whether it's a tough class or a gentle movement class. I love the laughs
+                        in the studio and just the whole vibe there."
+                        <p class="card-text font-weight-normal text-muted text-uppercase">
+                          - Yvonne
+                          </p>
+                      </p>
+                      <a href="{% url 'classes' %}?level=advanced" class="btn btn-info"> Click here to see Yvonne's Favourite Class Level</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
     </div>
 {% endblock %}
