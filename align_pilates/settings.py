@@ -22,13 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+#SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = 'z)3g!y20zsqy3rpon8x3umf%7gk_n(1-@3thb7_^o!z)lsjumt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io', 'align-pilates.heroku.app.com', 
-                'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com',]
+                'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com', '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu110.gitpod.io',]
 
 
 # Application definition
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'basket',
     'checkout',
     'profiles',
+    'about',
 
     # Others
     'crispy_forms',
