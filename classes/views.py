@@ -73,6 +73,7 @@ def class_info(request, class_type_id):
 
     return render(request, 'classes/class_type.html', context )
 
+
 @login_required
 def add_class(request):
     """ Add a class to the timetable """
