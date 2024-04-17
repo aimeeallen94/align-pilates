@@ -1,110 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Align Pilates
 
-Welcome Aimee Allen,
+## About
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-commerce website created at a fundamental level to sell classes to the public, in B2C (business to consumer) business model. The webpage is created to allow users to see what classes are on offer in the studio, to book classes they would like to attend using Stripe Payments, regsiter for accounts, log into accounts if they are a user, have the option to ask questions about the studio and to read a little bit of what the studio is all about as well as a link to the studios Facebook page where users can choose to follow the studio there also. The core of the ethos of this studio is being open to everyone and anyone with an interest in taking part in Pilates, whether you are a beginner or a Pilates expert everyone is welcome in Align.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Align Pilates live webpage can be accessed here](https://align-pilates-3ba4de4e758e.herokuapp.com/)
 
-## Gitpod Reminders
+## Planning
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Why I Chose This Project
+- I opted to create a Pilates booking website for my final project as I myself attend Pilates twice each week and it is something that I really love and am passionate about. I find the website and the app for my Pilates studio very impressive and provides a seamless user experience and I was hoping to create something similar for my own project. I created a mind map for myself of all of my ideas and features that could be potentially implemented to my project. I also created a short business model for Align Pilates at at planning stage so as to reinforce my project and to outline to trajectory I would like for the project to take.
 
-`python3 -m http.server`
+![Mind Map](/media/mind-map-align-pilates.png)
+![Business Model](/media/align-pilates-business-model.png)
 
-A blue button should appear to click: _Make Public_,
+### User Stories - Agile Methodology
 
-Another blue button should appear to click: _Open Browser_.
+- I was very conscoious at the start of this project that I did not want unneccessary features that did not add to the projects or that took up so much of my time that I feel it affected critical parts of my project. I knew the way I needed to plan and implememt this project was using an Agile Approach. With that in mind, I started at the smallest building block of Agile and I created my own table to illustrate user stories and to be able to track them as I progressed through the project to see that I was following in the correct direction for my project. I broke my User Stories up into three separate categories: Website Visitor, Site Owner and Studio Member.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    #### Website Vistor
+    - From the aspect of a visitor to the webapge I wanted the website to be appealing to the eye, easy to navigate and open to users who would like to join to reach out and contact the studio also. 
+    - I made the conscious decision of allow 'non members' to be able to book in for classes without having an account as for me in my day to day life I am often put off attending things when I have to fill out forms and provide a lot of personal information before I can attend something that I may only hvae the intention of attending just once.
 
-A blue button should appear to click: _Make Public_,
+    #### Site Owner
+    - I did want the site owner/admin to be able to have enhanced functionality of being able to schedule classes, edit classes and delete classes as they so needed.
+    - At a basic level I needed the site admin to be able to log in to the admin panel and have access to who has booked for each class.
+    - I also wanted the site owner to be able to send emails to members and to potential new members who wish to join the studio.
 
-Another blue button should appear to click: _Open Browser_.
+    #### Studio Member
+    - In keeping with my own studio I would like for members of the studio to be able to have enhanced functionality on the webpage. 
+    - I wanted members to be able to view their booking history so they could see their class history.
+    - I also wanted members to have a quick and easy transaction process so that they could easily book and attend classes, for that reason I allowed members to save and have the ability to update their personal details so there was minimal informaiton needed to make repeat bookings.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Align Pilates User Stories](/media/align-pilates-user-stories.png)
 
-To log into the Heroku toolbelt CLI:
+### Site Goals
+- Attractive to customer on initial opening of the webpage
+- Easy to navigate throughout the website
+- A fully functioning header with all working links to all pages throughout the webpage
+- A straightforward and simple payment system for users to book classes and receive confirmation
+- A selection of classes in a well laid out timetable that can easily be filtered and sorted through by users
+- A contact form where users can include any questions and queries they may have
+- Consistent use of styling and colours throughout the webiste
+- A clear footer with a link to the studios Facebook page
+- To allow users to register for an account easily if they wish to do so
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Styling 
+Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Colours
+- As I had mentioned I am very much in awe of the Pilates Studio I attend I tried to choose colours similar to their webpage as well as colours that are present in the studio. I find these colours calming and very easy to read. I chose three colours at the start and used a mixture of those throughout the webpage. I used [Coloors](https://coolors.co/) to help me create my colour palette.
 
-------
+### Fonts 
+- I used [Google Fonts](https://fonts.google.com/) to help me select a font for my webpage and also to be where I found my font of choice for the webpage. I selected Montserrat as the font for the webpage as I believe it to be elegant and very clearly read also.
 
-## Release History
+### Media
+- I opted with just the one background image for the entire webpage as I find now on a lot of webpages and in particular with respect to fitness and exercise pages a lot of them are jam packed with images of people illustrating how we should all want to look and the size we should be as well as what we should be doing. Pilates has a big focus on mindfulness amd it has taught me to appreciate me for who I am and to not compare myself to others. My joy in pilates comes from stretching my body and feeling strong within a movement and I couldn't find a more accurate picture than the one I had selected for my background image for the full website.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Header Image](/media/pilates-site-header.webp)
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Facebook Page
+- I created a Facebook page as a source of marketing and advertising for Align Pilates using Facebook's "Pages" tab. In today's current climate social media seems to be the primary source of advertising for all businesses. It can be free and if businesses choose to pay for it it is still a relatively cheap method of advertising that can reach huge audiences.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+![Facebook Page](/media/facebook-page-1.png)
+![Facebook Page](/media/facebook-page-2.png)
+![Facebook Page](/media/facebook-page-3.png)
