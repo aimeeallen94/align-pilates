@@ -13,7 +13,7 @@
     <div class="overlay"></div>
     <div class="container class-info-container">
         <div class="row">
-            <div class="col-12 col-md-8 col-lg-6 offset-1">
+            <div class="col-12 col-md-8 col-lg-8 offset-1">
                 <div class="row">
                     <div class="h-100">
                         <h2>Class Detail</h2>
@@ -22,6 +22,7 @@
                             <p class="subtitle">{{ class_type.level }}</p>
                             <p class="text">{{ class_type.description }}</p>
                             <p class="text">{{ class_type.teacher }}</p>
+                            <p class="text">€ {{ class_type.cost }}</p>
                             <p class="text">{{ class_type.time }}</p>
                             <p class="text">{{ class_type.day }}</p>
                             {% if class_type.rating %}
@@ -32,9 +33,16 @@
                         </div>
                         <form class="form" action="{% url 'add_to_basket' class_type.id %}" method="POST">
                             {% csrf_token %}
+                            <br>
                             <div class="form-row">
                                 <div class="col-12">
-                                    <p>Please note classes can only be booked on a weekly basis currently</p>
+                                    <p>Please note classes can only be booked on a <strong>weekly basis</strong> currently, 
+                                    that is if you book a class for example, Thursday you must be able to attend the class on the 
+                                    Thursday coming, classes cannot be booked in advanced.</p>
+                                    <p>If you wish to book for further ahead please pop back to us on the week of the class
+                                        or contact us on our <a href="{% url 'contact_form' %}"> Contact Form </a> and we will 
+                                        help sort that for you.
+                                    </p>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <input class="form-control qty-input" type="number" 
@@ -43,17 +51,20 @@
                                         </div>
                                     </div>
                                 </div>
-                               <!-- {% if request.user.is_superuser %}
+                               {% if request.user.is_superuser %}
                                     <small class="ml-3">
-                                        <a href="{% url 'edit_class' class.id %}">Edit</a> | 
-                                        <a class="text-danger" href="{% url 'delete_class' class.id %}">Delete</a>
+                                        <a href="{% url 'edit_class' class_type.id %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_class' class_type.id %}">Delete</a>
                                     </small>
-                                {% endif %} -->
+                                {% endif %}
                                 <div class="col-12">
                                     <a href="{% url 'classes' %}" class="btn btn-info class-booking-btns">
                                         <span>Continue Browsing</span>
                                     </a>
                                     <input type="submit" class="btn btn-info class-booking-btns" value="Book Now">
+                                    <a href="{% url 'view_basket' %}" class="btn btn-info class-booking-btns">
+                                        <span>Checkout</span>
+                                    </a>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>

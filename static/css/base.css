@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/site-header.webp') no-repeat center center fixed;
+    background: url('/media/pilates-site-header.webp') no-repeat center center fixed;
     height: calc(100vh - 164px);
     background-size: cover;
     color: #fafafa;
@@ -24,7 +24,9 @@ body {
 
 .about-container {
     background: #0FA3B1;
+    top: 50px;
     padding-bottom: 50px;
+    padding-top: 120px;
 }
 
 .about-header {
@@ -83,10 +85,11 @@ body {
 }
 
 .class-info-container {
+    padding-top: 100px;
     background-color: #343a40;
-    opacity: 0.8;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    opacity: 0.9;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .class-booking-btns {
@@ -106,7 +109,39 @@ body {
 .basket-container {
     background-color: #0FA3B1;
     margin-bottom: 10px;
-    color: #fafafa ;
+    color: #fafafa !important;
+}
+
+.basket-table {
+    color: #fafafa !important;
+}
+
+.basket-icon {
+    color: #0FA3B1 !important;
+}
+
+.checkout-container {
+    background-color: #0FA3B1;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+
+.text-info {
+    color: #fafafa !important;
+    text-decoration: underline;
+}
+
+.return-button {
+    background-color: #fafafa;
+    border: 1px solid #343a40;
+    border-radius: 5px;
+    padding: 5px;
+    color: #343a40;
+}
+
+.return-button:hover {
+    text-decoration: underline;
 }
 
 button, 
@@ -320,6 +355,9 @@ footer {
         max-width: 100%;
         margin-top: 20px;
         margin-top: 20px;
+    }
+    .about-container {
+        top: 100px !important;
     }
 }
 

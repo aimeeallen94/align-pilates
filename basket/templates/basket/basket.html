@@ -21,14 +21,14 @@
             <div class="col">
                 {% if basket_items %}
                     <div class="table-responsive">
-                        <table class="table table-sm table-borderless">
+                        <table class="table table-sm table-borderless basket-table">
                             <thead>
                                 <tr>
                                     <th scope="col">Class Name</th>
                                     <th scope="col">Teacher</th>
                                     <th scope="col">Cost</th>
+                                    <th scope="col">Quantity</th>
                                     <th scope="col">Level</th>
-                                    <th scope="col">Grand Total</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -44,10 +44,10 @@
                                         <p class="my-0">€{{ item.booking.cost }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">{{ item.booking.level }}</p>
+                                        <p class="my-0">{{ class_count }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">{{ item.grand_total }}</p>
+                                        <p class="my-0">{{ item.booking.level }}</p>
                                     </td>
                                     <td>
                                         <a class="remove-item text-danger float-right remove-button" id="remove_{{ item.class_id }}">Remove</a>
@@ -56,7 +56,7 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: €{{ grand_total|floatformat:2 }}</strong></h6>
+                                    <h6><strong>Bag Total: ${{ grand_total|floatformat:2 }}</strong></h6>
                                 </td>
                             </tr>
                             <tr>
@@ -80,7 +80,7 @@
                 {% else %}
                     <p>You have not added any classes to your basket yet.</p>
                     <a href="{% url 'classes' %}" class="btn btn-info">
-                        <span>Click here to return to our timetable to make a booking.</span>
+                        <span class="return-button">Click here to return to our timetable to make a booking.</span>
                     </a>
                 {% endif %}
             </div>

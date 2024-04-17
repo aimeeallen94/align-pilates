@@ -12,10 +12,10 @@ def basket_contents(request):
     basket = request.session.get('basket', {})
 
     for class_id, item_data in basket.items():
-        if isinstance(class_count, int):
+        if isinstance(item_data, int):
             booking = get_object_or_404(Class_Type, pk=class_id)
-            grand_total = class_count * 15
             class_count += item_data
+            grand_total += class_count * cost
             basket_items.append({
                 'class_id': class_id,
                 'class_count': item_data,

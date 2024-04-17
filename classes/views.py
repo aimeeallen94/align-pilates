@@ -82,7 +82,9 @@ def add_class(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
+#        class_type = get_object_or_404(Class_Type, pk=class_type_id)
         form = ClassTypeForm(request.POST, request.FILES)
+#        prevent_double_bookings(class_type, class_type_id)
         if form.is_valid():
             class_type = form.save()
             messages.success(request, 'Successfully added class!')
