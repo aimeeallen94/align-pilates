@@ -65,3 +65,17 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 ![Facebook Page](/media/facebook-page-1.png)
 ![Facebook Page](/media/facebook-page-2.png)
 ![Facebook Page](/media/facebook-page-3.png)
+
+## Technologies Used
+
+- GitHub
+- Django
+- Python
+- Stripe for secure payment processing
+- Heroku for Deployment
+
+
+
+## Future Features to Implement
+- When time and skills allow I would like to change the option of booking pilates classes only on a weekly basis to a monthly basis on a calendar format if possible. I would like for users to be able to plan ahead and to be able to book ahead if needed.
+- I would also consider putting blog posts on this webiste to enhance the community vibe of the studio and to really encourage maximum engagment from users and to increase the number of members in the studio also.
