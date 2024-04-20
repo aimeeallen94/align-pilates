@@ -11,7 +11,8 @@ from profiles.models import UserProfile
 from basket.contexts import basket_contents
 
 import stripe
-import json 
+import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -28,6 +29,7 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -59,16 +61,19 @@ def checkout(request):
                         )
                         reservation_line_item.save()
                 except Class_Type.DoesNotExist:
-                    messages.error(request, ('One of the classes you have tried to book seems to be displaying an error. \
+                    messages.error(request, ('One of the classes you have \
+                    tried to book seems to be displaying an error. \
                         Please call us for assistance.')
                         )
                     reservation.delete()
                     return redirect(reverse('view_basket'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[reservation.reservation_number]))
+            return redirect(reverse('checkout_success',
+                            args=[reservation.reservation_number]))
         else:
-            messages.error(request, 'There was an error with your booking. Please double check all details provided.')
+            messages.error(request, 'There was an error with your booking. \
+                           Please double check all details provided.')
     else:
         basket = request.session.get('basket', {})
         if not basket:
@@ -84,7 +89,8 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
-     # Attempt to prefill the form with any info the user maintains in their profile
+    # Attempt to prefill the form with any
+    # info the user maintains in their profile
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
@@ -111,12 +117,14 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, reservation_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    reservation = get_object_or_404(Reservation, reservation_number=reservation_number)
+    reservation = get_object_or_404(Reservation,
+                                    reservation_number=reservation_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

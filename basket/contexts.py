@@ -1,7 +1,6 @@
-from decimal import Decimal
-from django.conf import settings
 from django.shortcuts import get_object_or_404
-from classes.models import Level, Class_Type
+from classes.models import Class_Type
+
 
 def basket_contents(request):
 
@@ -27,5 +26,5 @@ def basket_contents(request):
         'grand_total': grand_total,
         'class_count': class_count,
     }
-    
+
     return context

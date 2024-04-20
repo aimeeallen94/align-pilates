@@ -6,7 +6,6 @@ from django.db.models import Q
 from .models import Class_Type, Level
 from .forms import ClassTypeForm
 
-# Create your views here.
 
 def all_classes(request):
     """ A view to show the class/timetable page and all for some filtering """
@@ -30,8 +29,6 @@ def all_classes(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             class_types = class_types.order_by(sortkey)
-    
-
 
     if request.GET:
         if 'level' in request.GET:
@@ -44,7 +41,8 @@ def all_classes(request):
     if 'q' in request.GET:
         query = request.GET['q']
         if not query:
-            messages.error(request, "Your search didn't match any of our results")
+            messages.error(request,
+                           "Your search didn't match any of our results")
             return redirect(reverse('classes'))
 
         queries = Q(name__icontains=query) | Q(teacher__icontains=query) | Q(day__icontains=query)
@@ -59,7 +57,7 @@ def all_classes(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'classes/classes.html', context )
+    return render(request, 'classes/classes.html', context)
 
 
 def class_info(request, class_type_id):
@@ -71,7 +69,7 @@ def class_info(request, class_type_id):
         'class_type': class_type,
     }
 
-    return render(request, 'classes/class_type.html', context )
+    return render(request, 'classes/class_type.html', context)
 
 
 @login_required
@@ -82,15 +80,14 @@ def add_class(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-#        class_type = get_object_or_404(Class_Type, pk=class_type_id)
         form = ClassTypeForm(request.POST, request.FILES)
-#        prevent_double_bookings(class_type, class_type_id)
         if form.is_valid():
             class_type = form.save()
             messages.success(request, 'Successfully added class!')
             return redirect(reverse('class_type', args=[class_type.id]))
         else:
-            messages.error(request, 'Failed to add class. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add class. \
+            Please ensure the form is valid.')
     else:
         form = ClassTypeForm()
 
@@ -100,6 +97,7 @@ def add_class(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_class(request, class_type_id):
@@ -116,7 +114,8 @@ def edit_class(request, class_type_id):
             messages.success(request, 'Successfully updated class!')
             return redirect(reverse('class_type', args=[class_type.id]))
         else:
-            messages.error(request, 'Failed to update class type. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update class type. \
+                            Please ensure the form is valid.')
     else:
         form = ClassTypeForm(instance=class_type)
         messages.info(request, f'You are editing {class_type.name}')
@@ -129,6 +128,7 @@ def edit_class(request, class_type_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_class(request, class_type_id):
     """ Delete a class from the timetable """
@@ -140,3 +140,8 @@ def delete_class(request, class_type_id):
     class_type.delete()
     messages.success(request, 'Class deleted!')
     return redirect(reverse('classes'))
+
+
+def custom_404(request, exception):
+    """ Returning 404 error page on status 404 error """
+    return render(request, '404.html', status=404)

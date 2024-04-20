@@ -15,51 +15,40 @@
             <a href="{% url 'classes' %}?level=level_3" class="dropdown-item">Level 3</a>
             <a href="{% url 'classes' %}?level=advanced" class="dropdown-item">Advanced</a>
         </div></div>
-        <div class="col-3 col-lg-2 my-auto col-md-2">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-            <li class="list-inline-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="options" data-toggle="dropdown" aria-haspopup="true" 
-                aria-expanded="false">My Account
-                </a>
-                <div class="dropdown-menu" aria-labelledby="options">
-                {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                        <a href="{% url 'add_class' %}" class="dropdown-item">Timetable Management</a>
-                    {% endif %}
+        <div class="col-3 col-lg-2 col-md-2 my-auto dropdown">
+            <a href="{% url 'account_login' %}" class="dropdown-toggle" id="options" data-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="false">My Account</a>
+        <div class="dropdown-menu">    
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'add_class' %}" class="dropdown-item">Timetable Management</a>
+                {% endif %}
                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
-            </div>
-        </li>
-        </ul>
-        </div>
-        <div class="col-3 col-lg-2 col-md-2 my-auto">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-            <a class="nav-link dropdown-toggle" href="" id="options" data-toggle="dropdown" aria-haspopup="true" 
-            aria-expanded="false">Want to Join?
-            </a>
-            <div class="dropdown-menu" aria-labelledby="options">
-            <li class="list-inline-item dropdown-item"><a href="{% url 'account_signup' %}">Join Now</a></li>
-            <li class="list-inline-item dropdown-item"><a href="{% url 'contact_form' %}">Contact Us</a></li>
-        </ul>
-        </div>
+        </div></div>
+        <div class="col-3 col-lg-2 col-md-2 my-auto dropdown">
+            <a href="{% url 'classes' %}" class="dropdown-toggle" id="options" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false">Want to Join?</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Join Now</a>
+            <a href="{% url 'contact_form' %}" class="dropdown-item">Contact Us</a>
+        </div></div>
         <div class="col-3 col-lg-1 col-md-2 my-auto">
             <li class="list-inline-item">
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" 
                 href="{% url 'view_basket' %}">
-                    <div class="text-center">
-                        <div><i class="fas fa-shopping-bag fa-lg basket-icon"></i></div>
-                        <p class="my-0 basket-icon">
-                            {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
-                            {% else %}
-                                $0.00
-                            {% endif %}
-                        </p>
-                    </div>
+                    <i class="fas fa-shopping-bag fa-lg basket-icon"></i>
+                    <p class="my-0 basket-icon">
+                        {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                            $0.00
+                        {% endif %}
+                    </p>
                 </a>
             </li>
         </div>   

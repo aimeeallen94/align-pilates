@@ -3,10 +3,11 @@ from django.dispatch import receiver
 
 from .models import ReservationLineItem
 
+
 @receiver(post_save, sender=ReservationLineItem)
 def update_on_save(sender, instance, created, **kwargs):
-    """ 
-    Update reservation as lineitems added 
+    """
+    Update reservation as lineitems added
     """
     instance.reservation.update_total()
 

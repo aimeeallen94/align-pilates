@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ContactDetails(models.Model):
     """
     Contact details model for contact us form

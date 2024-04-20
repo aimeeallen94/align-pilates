@@ -3,6 +3,7 @@ from .models import Level, Class_Type
 
 # Register your models here.
 
+
 class LevelAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -21,6 +22,7 @@ class Class_TypeAdmin(admin.ModelAdmin):
         'cost',
         'day_number',
     )
+
 
 admin.site.register(Level, LevelAdmin)
 admin.site.register(Class_Type, Class_TypeAdmin)

@@ -11,6 +11,7 @@ import json
 import time
 import stripe
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -22,17 +23,17 @@ class StripeWH_Handler:
         cust_email = reservation.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'reservation': reservationr})
+            {'reservation': reservation})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'reservation': reservation, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        ) 
+        )
 
     def handle_event(self, event):
         """
@@ -53,10 +54,10 @@ class StripeWH_Handler:
 
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
-        intent.latest_charge
-)
+            intent.latest_charge
+        )
 
-        billing_details = stripe_charge.billing_details 
+        billing_details = stripe_charge.billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Update profile information if save_info was checked
@@ -68,7 +69,7 @@ class StripeWH_Handler:
                 profile.default_phone_number = billing_details.phone
                 profile.default_email = billing_details.address.email
                 profile.save()
-       
+
         reservation_exists = False
         attempt = 1
         while attempt <= 5:
@@ -89,7 +90,8 @@ class StripeWH_Handler:
         if reservation_exists:
             self._send_confirmation_email(reservation)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified reservation already in database',
+                content=f'Webhook received: {event["type"]} | \
+                SUCCESS: Verified reservation already in database',
                 status=200)
         else:
             reservation = None
@@ -127,7 +129,8 @@ class StripeWH_Handler:
                     status=500)
         self._send_confirmation_email(reservation)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created reservation in webhook',
+            content=f'Webhook received: {event["type"]} | \
+                      SUCCESS: Created reservation in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

@@ -7,6 +7,7 @@ from .forms import UserProfileForm
 
 from checkout.models import Reservation
 
+
 @login_required
 def profile(request):
     """ Display the user's profile. """
@@ -34,10 +35,11 @@ def profile(request):
 
 
 def reservation_history(request, reservation_number):
-    reservation = get_object_or_404(Reservation, reservation_number=reservation_number)
+    reservation = get_object_or_404(
+                        Reservation, reservation_number=reservation_number)
 
     messages.info(request, (
-        f'This is a previous confirmation for { reservation_number }.'
+        f'This is a previous confirmation for {reservation_number}.'
         'A confirmation email was sent on the reservation date.'
     ))
 

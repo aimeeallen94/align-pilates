@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 
-
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -32,11 +31,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
-
-ALLOWED_HOSTS = ['8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io', 'align-pilates.heroku.app.com', 
-                'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com', '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu110.gitpod.io',]
+ALLOWED_HOSTS = [
+                '8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io',
+                'align-pilates.heroku.app.com',
+                'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com',
+                '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu110.gitpod.io',
+                ]
 
 
 # Application definition
@@ -90,7 +93,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'basket.contexts.basket_contents',

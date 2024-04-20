@@ -2,23 +2,26 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
 
 from classes.models import Class_Type
 from profiles.models import UserProfile
 
 
 class Reservation(models.Model):
-    reservation_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, 
-                                    blank=True, related_name='reservations')
+    reservation_number = models.CharField(max_length=32, null=False,
+                                          editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='reservations')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    reservation_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    reservation_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                            null=False, default=0)
     original_basket = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False,
+                                  default='')
 
     def _generate_reservation_number(self):
         """
@@ -48,10 +51,15 @@ class Reservation(models.Model):
 
 
 class ReservationLineItem(models.Model):
-    reservation = models.ForeignKey(Reservation, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    class_type = models.ForeignKey(Class_Type, null=False, blank=False, on_delete=models.CASCADE)
+    reservation = models.ForeignKey(Reservation, null=False, blank=False,
+                                    on_delete=models.CASCADE,
+                                    related_name='lineitems')
+    class_type = models.ForeignKey(Class_Type, null=False, blank=False,
+                                   on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=1)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                         null=False, blank=False,
+                                         editable=False)
 
     def save(self, *args, **kwargs):
         """
@@ -62,4 +70,5 @@ class ReservationLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Class {self.class_type.name} on reservation: {self.reservation.reservation_number}'
+        return f'Class {self.class_type.name} on reservation: \
+        {self.reservation.reservation_number}'
