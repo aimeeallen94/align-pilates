@@ -33,6 +33,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
     - I also wanted members to have a quick and easy transaction process so that they could easily book and attend classes, for that reason I allowed members to save and have the ability to update their personal details so there was minimal informaiton needed to make repeat bookings.
 
 ![Align Pilates User Stories](/media/align-pilates-user-stories.png)
+![Align Pilates GitHub User Stories](/media/git-hub-user-stories.png)
 
 ### Site Goals
 - Attractive to customer on initial opening of the webpage
@@ -79,3 +80,4 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 ## Future Features to Implement
 - When time and skills allow I would like to change the option of booking pilates classes only on a weekly basis to a monthly basis on a calendar format if possible. I would like for users to be able to plan ahead and to be able to book ahead if needed.
 - I would also consider putting blog posts on this webiste to enhance the community vibe of the studio and to really encourage maximum engagment from users and to increase the number of members in the studio also.
+- I would also to to add enhanced form validation for the modificaiton of and adding classes to the studio timetable so that it is not possible for admins to book two classes at the same time. 
