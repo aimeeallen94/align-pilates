@@ -321,7 +321,7 @@ footer {
     color: #0FA3B1;
     text-align: center;
     font-size: 110%;
-    height: 100px;
+    height: 150px;
     width: 100%;
     margin-top: auto;
 }
@@ -345,10 +345,11 @@ footer {
 
 /* From Mailchimp */
 #mc_embed_signup {
-    color: #0FA3B1 !important;
+    color: #0FA3B1;
     clear:left; 
     font:14px Helvetica,Arial,sans-serif; 
     font-size: 70%;
+    background-color: #fafafa;
 }
 
 @media (min-width: 769px) {
