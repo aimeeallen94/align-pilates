@@ -92,8 +92,21 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 - On the classes page the classes are laid out in a card format displaying a snippet of information about each class including class name, teacher, rating, cost and an option to read more and book from there.
 - Also on the class page is a search bar where users can enter a class name, teacher or day they would like to search for and results are displayed from there. 
 - There is also a "Sort By" dropdown where users can choose to filter their class results by time, day of the week, teachers A-Z and ratings also. These filters can be applied in both filtering directions also to make it as easy as possible for users to find their desired class.
+- There is also an option to "Arrange By" where users can opt to arrange the timetable by Class, Teacher, Time, Day or Rating.
 - In order to make this page the most user friendly on smaller webpages I disabled the display of the search bar on smaller screens, however users could still filter classes from here.
+- When the admin is signed in two extra options appear on each class card giving the admin the option to Edit or Delete any class in the timetable.
+- The classses page is made responsive using Bootstrap column view to allow for less class cards on smaller screens and more on larger ones.
+- There is also a 'Back to Top' button on the classes page to allow users to return to the top of the page whenever they need.
 
+![Classes - Arrange By](/media/class-arrange-by.png)
+![Classes - Search By](/media/class-search-results.png)
+![Classes - Filter for Admins](/media/class-filter-admin.png)
+![Classes - Filter for Visitors](/media/class-filter-visitor.png)
+![Classes - Sort By](/media/class-sort-by.png)
+![Classes Standard View](/media/class-standard-view.png)
+![Classes Medium Screen View](/media/classes-medium-screen-view.png)
+![Classes Mobile View](/media/classes-mobile-view.png)
+![Back to Top Button](/media/back-to-top-button.png)
 
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
