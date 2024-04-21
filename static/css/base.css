@@ -320,17 +320,13 @@ footer {
     background-color: #fafafa;
     color: #0FA3B1;
     text-align: center;
-    font-size: 60%;
-    height: 200px;
+    font-size: 110%;
+    height: 100px;
     width: 100%;
     margin-top: auto;
 }
 
 .footer-header {
-    padding-top: 10px;
-}
-
-.mailchimp-col {
     padding-top: 10px;
 }
 
@@ -349,7 +345,7 @@ footer {
 
 /* From Mailchimp */
 #mc_embed_signup {
-    background:#fff;
+    color: #0FA3B1 !important;
     clear:left; 
     font:14px Helvetica,Arial,sans-serif; 
     font-size: 70%;
