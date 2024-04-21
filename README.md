@@ -59,6 +59,22 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Site Logo](/media/site-logo.png)
 ![Navbar Class List](/media/navbar-classes.png)
 ![Navbar Member View](/media/member-navbar-view.png)
+![Navbar Admin View](/media/admin-navbar-view.png)
+![Navbar Visitor View](/media/navbar-new-members.png)
+![Navbar Basket](/media/navbar-basket.png)
+![Mobile Navbar](/media/mobile-nav.png)
+![Mobile Navbar Contents](/media/mobile-navbar-contents.png)
+
+### Footer
+- The footer remains consistent throughout all pages in the website. It is responsive for smaller and larger webpages. 
+- The footer contains the site name as well as a link to the studio's webpage.
+
+### Homepage
+- The homepage is a landing page for all visitors to the Align Pilates website. The homepage consists of a large image of someone taking part in Reformer Pilates and a button to link users to the timetable for the studio.
+- The homepage stays consistent with the styling of the webpage.
+
+![Homepage](/media/homepage.png)
+
 
 
 
