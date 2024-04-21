@@ -17,9 +17,11 @@
                         <a href="{% url 'add_class' %}" class="nav-item dropdown">Timetable Management</a>
                     {% endif %}
                     <a href="{% url 'profile' %}" class=" nav-item dropdown">My Profile</a>
+                    <br>
                     <a href="{% url 'account_logout' %}" class="nav-item dropdown">Logout</a>
                 {% else %}
                     <a href="{% url 'account_signup' %}" class="nav-item dropdown">Register</a>
+                    <br>
                     <a href="{% url 'account_login' %}" class="nav-item dropdown">Login</a>
                 {% endif %}
             </li>
@@ -28,9 +30,9 @@
                     <i class="fas fa-shopping-bag fa-lg my-0"></i>
                     <p class="my-0">
                         {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
+                            €{{ grand_total|floatformat:2 }}
                         {% else %}
-                            $0.00
+                            €0.00
                         {% endif %}
                     </p>
                 </a>

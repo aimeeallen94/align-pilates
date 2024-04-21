@@ -46,6 +46,22 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 - A clear footer with a link to the studios Facebook page
 - To allow users to register for an account easily if they wish to do so
 
+## Features 
+### Responsive Navbar
+- The navbar I designed for Align Pilates is responsive to different screen sizes and different users who are using the webpage to allow for easiest navigation for website viewers as well as enhanced functionality for members and admin. 
+- The site logo on the navbar is also a link that can be clicked on all pages to bring users back to the homepage.
+- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter classes available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access timetable management if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
+- The basket icons reflects to users if there is anything in their basket and the current total of their basket also.
+- The mobile navbar displays for smaller screen sizes and displays as a compact menu item in the top left of smaller screens.
+- When the mobile navbar is clicked the menu options are displayed to the user. This navbar is more concise than the main navbar so as to prevent the mobile navbar being too large or to require too much scrolling on smaller screens. There is no dropwdown on the mobile navbar other than the main one.
+
+![Main Navbar](/media/main-navbar.png)
+![Site Logo](/media/site-logo.png)
+![Navbar Class List](/media/navbar-classes.png)
+![Navbar Member View](/media/member-navbar-view.png)
+
+
+
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
 
