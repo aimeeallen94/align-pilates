@@ -50,7 +50,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ### Responsive Navbar
 - The navbar I designed for Align Pilates is responsive to different screen sizes and different users who are using the webpage to allow for easiest navigation for website viewers as well as enhanced functionality for members and admin. 
 - The site logo on the navbar is also a link that can be clicked on all pages to bring users back to the homepage.
-- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter classes available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access timetable management if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
+- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter class levels available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access timetable management if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
 - The basket icons reflects to users if there is anything in their basket and the current total of their basket also.
 - The mobile navbar displays for smaller screen sizes and displays as a compact menu item in the top left of smaller screens.
 - When the mobile navbar is clicked the menu options are displayed to the user. This navbar is more concise than the main navbar so as to prevent the mobile navbar being too large or to require too much scrolling on smaller screens. There is no dropwdown on the mobile navbar other than the main one.
@@ -77,7 +77,22 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
 ![Homepage](/media/homepage.png)
 
+### About Page
+- The about page provides a brief overview of the studio, its owners and it's ethos. There is a link in the "About Align Pilates" section for visitors to the site who would like to regsiter to become a member of the studio also.
+- There is also a section of Kind Words from members of the studio in Bootstraps card layout giving their feedback and thoughts and feelings towards the studio. 
+- At the end of the about page is an option for site visitors to sign up for the studios newsletter, this form was generated via MailChimp and is fully functional as tested.
+- The about page is responsive for smaller and larger screens and maintains the styling from the homepage with regard to colour choices, fonts and keeping the same background images from the homepage.
 
+![About Align Pilates](/media/about-align-pilates.png)
+![Kind Words](/media/kind-words.png)
+![Newsletter Subscription](/media/mail-chimp-newsletter.png)
+
+### Classes Page
+- The class page can be viewed by the users in an array of different formats based on sorting, filtering and search queries the user enters. From the homepage the user can choose to view all classses or to select their desired level of classes and view just those classes.
+- On the classes page the classes are laid out in a card format displaying a snippet of information about each class including class name, teacher, rating, cost and an option to read more and book from there.
+- Also on the class page is a search bar where users can enter a class name, teacher or day they would like to search for and results are displayed from there. 
+- There is also a "Sort By" dropdown where users can choose to filter their class results by time, day of the week, teachers A-Z and ratings also. These filters can be applied in both filtering directions also to make it as easy as possible for users to find their desired class.
+- In order to make this page the most user friendly on smaller webpages I disabled the display of the search bar on smaller screens, however users could still filter classes from here.
 
 
 ## Styling 
