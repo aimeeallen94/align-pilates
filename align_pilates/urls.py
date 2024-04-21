@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import handler404
+from classes import views
 
 handler404 = 'classes.views.custom_404'
 

@@ -142,6 +142,6 @@ def delete_class(request, class_type_id):
     return redirect(reverse('classes'))
 
 
-def custom_404(request, exception):
+def custom_404(request_path, exception):
     """ Returning 404 error page on status 404 error """
-    return render(request, '404.html', status=404)
+    return render(request_path, '404.html', status=404)
