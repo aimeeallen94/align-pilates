@@ -89,7 +89,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
 ### Classes Page
 - The class page can be viewed by the users in an array of different formats based on sorting, filtering and search queries the user enters. From the homepage the user can choose to view all classses or to select their desired level of classes and view just those classes.
-- On the classes page the classes are laid out in a card format displaying a snippet of information about each class including class name, teacher, rating, cost and an option to read more and book from there.
+- On the classes page the classes are laid out in a card format displaying a snippet of information about each class including class name, teacher, rating, time, day, cost and a button to click on for users who wish to read more and book from there.
 - Also on the class page is a search bar where users can enter a class name, teacher or day they would like to search for and results are displayed from there. 
 - There is also a "Sort By" dropdown where users can choose to filter their class results by time, day of the week, teachers A-Z and ratings also. These filters can be applied in both filtering directions also to make it as easy as possible for users to find their desired class.
 - There is also an option to "Arrange By" where users can opt to arrange the timetable by Class, Teacher, Time, Day or Rating.
@@ -107,6 +107,37 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Classes Medium Screen View](/media/classes-medium-screen-view.png)
 ![Classes Mobile View](/media/classes-mobile-view.png)
 ![Back to Top Button](/media/back-to-top-button.png)
+
+### Class Detail View
+- Once the 'Book Now & More Info' button is clicked fomr the Classes Page users are brought to the Class Detail View.
+- This is page created specifically for each different class available in the studio where it provides a more detailed description of each class to allow users to decide if a specific class is suitable for them and if they would like to attend. 
+- This page also consists of other information about each class such as class level, teacher, cost, time, day and rating in a very clearly laid out and understandable format.
+- This page also provides a message to people who are booking into classes in the studio alerting them to the fact that currently classes are only available to be booked on a weekly basis and that booking classes in advance of a week or longer is not currently possible in the studio. The note does advise users to complete the 'Contact Form' which is linked in the note, that if they would like to book further in advance and the studio would gladly oblige.
+- The quantity is set here to 1 and this quantity cannot be increased or decreaesed by clicking the up or down button on the quantity arrows.
+- At the end of the class detail view there is a three separate buttons, one to allow users to select to 'Continue Browsing' which brings users back to the class timetable view, a button to 'Book Now' which when clicked adds that specific class to the users basket and the last button 'Checkout' which allows users to go the the checkout and from there on to proceed to payment.
+- When a user selects the 'Book Now' button a success toast message appears at the top right of the screen alerting users that the specific class they selected has been added to their basket.
+- The user can select here to 'Go To Secure Checkout' from this toast message also.
+- This page continues with the colour scheme and fonts used in all other pages on the website.
+- This page is fully responsive and can be easily read and seen on smaller screen sizes as well as larger screens.
+
+![Class Detail View](/media/class-detail-view.png)
+![Class Detail Buttons](/media/class-detail-buttons.png)
+![Clas Detail Link](/media/class-detail-link.png)
+![Class Detail Mobile View](/media/class-detail-mobile.png)
+![Class Detail Basket Toast](/media/class-detail-basket-toast.png)
+
+### Basket
+- The basket page can be accessed many ways in this webpage, as mentioned above it can be accessed via the toast message when users add something to their basket, view the class detail view and also via the navbar at the top right of the homescreen on larger screens and at the end of the dropdown on mobile screens.
+- The basket provides users with a summary of what is in their basket and also presents users with the grand total for their order as well as an option to 'Remove' any items they may no longer require from their basket.
+- If a users chooses to remove a specific class a custom toast message displays to highlight to users that that class has been removed.
+- From here users can either choose to 'Continue Shopping' and return to the class timetable or to continue onto the 'Secure Checkout'.
+- If users click to go to their bakset and it is empty a message displays to tell the user their basket is empty and provides a link for users to return to the timetable to look if they would like to book a class.
+- For smaller screens the basket contents turned into a scrollable screen and a horizontal scrollbar can be seen at the end of the basket to allow users to view all the contents of their basket.
+
+![Basket](/media/basket.png)
+![Basket Item Removed Toast](/media/basket-remove-item.png)
+![Empty Basket View](/media/empty-basket.png)
+![Mobile View Basket](/media/mobile-view-basket.png)
 
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.

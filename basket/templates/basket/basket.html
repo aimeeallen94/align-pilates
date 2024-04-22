@@ -21,7 +21,7 @@
             <div class="col">
                 {% if basket_items %}
                     <div class="table-responsive">
-                        <table class="table table-sm table-borderless basket-table">
+                        <table class="table table-sm table-borderless basket-table overflow-scroll">
                             <thead>
                                 <tr>
                                     <th scope="col">Class Name</th>
@@ -61,13 +61,13 @@
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'classes' %}" class="btn rounded-0 btn-lg">
+                                    <a href="{% url 'classes' %}" class="btn">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
