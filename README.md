@@ -139,6 +139,24 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Empty Basket View](/media/empty-basket.png)
 ![Mobile View Basket](/media/mobile-view-basket.png)
 
+### Checkout 
+- Users are brought to this page once they have selected the 'Secure Checkout' button on either the basket page or when the basket icon is clicked in the navbar.
+- Here users are brought to a checkout form where they have to enter the Name, Email Address, Phone Number, Card Number, Expiry Date, CVV2 and Post Code. 
+- Also on this page a reservation summary is displayed to the user providing the details of the class name, time, day and cost as well as the total cost of the reservation.
+- If a user is logged in on this page an option appears for users to save their information so it can be used again for their next booking. 
+- There is form validation on the checkout page displaying and error to users if incorrect card details are entered, an card expired is entered, if the email address is not entered in the correct format or if any fields are left blank. 
+- Users also have the option here to 'Adjust Bag' where they can make any amendments needed to their orders they would like.
+- Once the user has completed the form they select 'Complete Reservation' and users are brought to a loading page with a pale yellow colour and loading spinner so that the user knows their transaction is in progress.
+- Users are then brought an order confirmation page including an order number and informing them that a confirmation email will be sent to their email address used shortly to confirm the booking. A toast success message also displays in the top right corner of the screen also indicating to the user that their reservation has been made as well as their order number and that a confirmation email will be sent to them soon.
+- From here users can click on the link to navigate back to the timetable for the studio if they would like to continue browsing.
+
+![Checkout](/media/checkout.png)
+![Saved Info Checkout](/media/saved-info-checkout.png)
+![Checkout Form Validation](/media/checkout-form-validation.png)
+![Checkout Loading Spinner](/media/loading-spinner-checkout.png)
+![Reservation Complete](/media/booking-complete.png)
+![Reservation Toast Success Message](/media/toast-success-checkout.png)
+
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
 
