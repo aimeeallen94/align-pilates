@@ -144,11 +144,13 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 - Here users are brought to a checkout form where they have to enter the Name, Email Address, Phone Number, Card Number, Expiry Date, CVV2 and Post Code. 
 - Also on this page a reservation summary is displayed to the user providing the details of the class name, time, day and cost as well as the total cost of the reservation.
 - If a user is logged in on this page an option appears for users to save their information so it can be used again for their next booking. 
+- If a user has not logged into their account there is a link for users to log in there and there is also a link for users who would like to create an account to do so here also.
 - There is form validation on the checkout page displaying and error to users if incorrect card details are entered, an card expired is entered, if the email address is not entered in the correct format or if any fields are left blank. 
 - Users also have the option here to 'Adjust Bag' where they can make any amendments needed to their orders they would like.
 - Once the user has completed the form they select 'Complete Reservation' and users are brought to a loading page with a pale yellow colour and loading spinner so that the user knows their transaction is in progress.
 - Users are then brought an order confirmation page including an order number and informing them that a confirmation email will be sent to their email address used shortly to confirm the booking. A toast success message also displays in the top right corner of the screen also indicating to the user that their reservation has been made as well as their order number and that a confirmation email will be sent to them soon.
 - From here users can click on the link to navigate back to the timetable for the studio if they would like to continue browsing.
+- All colours and fonts are maintained from the other pages on the webpage.
 
 ![Checkout](/media/checkout.png)
 ![Saved Info Checkout](/media/saved-info-checkout.png)
@@ -156,6 +158,49 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Checkout Loading Spinner](/media/loading-spinner-checkout.png)
 ![Reservation Complete](/media/booking-complete.png)
 ![Reservation Toast Success Message](/media/toast-success-checkout.png)
+
+### My Profile
+- My Profile can be accessed by users from the Navbar when users are signed in by first clicking on 'My Account' and next selecting 'My Profile'.
+- Here users can see a history of classes attended by members as well as users default saved information that can be updated by users at any point. 
+- Users can select any previous reservation number and be taken to that previous booking and a toast message appears to highlight to users that this is a previous reservation and a confirmation email was sent at the time of booking.
+- This page is fully responsive and switches from the user details and order history being laid out side by side to being stacked on top of one another on smaller screen sizes.
+
+![Profile](/media/profile.png)
+![Mobile Profile](/media/mobile-profile.png)
+![Past Reservation Toast](/media/reservation-history-toast.png)
+
+### Sign In
+- Users can log into their account from a number of places within the website, they can access a 'Login' option by selecting 'My Account' on the navbar and clicking on 'Login' from here, they can choose to log in at the checkout page of the website and also there is a link for users to 'Log In' on the 'Sign Up' page if a user has mistakenly chose to create an account rather than signing into their account.
+- Here users enter their username or email and password and can sign in from here.
+- Users can check a checkbox if they would like their informaiton to be remembered for the next time they are signing in. 
+- Once a user has signed in a toast message is displayed on the top right corner of the website to highlight to users that they are now signed in.
+- Also on this page there is links for users who may have forgotten their password to reset it and another link for users who would like to access their homepage from here also.
+- There is also a link here for users to 'Sign Up' if they need to sign up for an account rather than sign in. 
+
+![Log In Page](/media/log-in.png)
+![Log In Toast Message](/media/log-in-toast.png)
+
+### Sign Out
+- From the 'My Account' item on the navbar members can click here and select 'Sign Out' from the dropdown menu.
+- From here users are brought to a screen to confirm the users intention to sign out as well as a link to return to the home page if this is not what the user wants.
+- If the user clicks to 'Sign Out' a toast message is displayed in the top right corner of the screen display that the member has signed out.
+
+![Sign Out Page](/media/sign-out.png)
+![Logged Out Toast Message](/media/sign-out-confirmed.png)
+
+### Join Now
+- Users can choose to create an account with Align Pilates very easily from a number of different places in the website. They can access 'Join Now' from the navbar by selecting 'Want to Join?' and the choosing 'Join Now', also in the checkout users can select to 'Create an Account', from the 'Login' page there is a link to 'Sign Up' and also in the About page there is a link for users to 'Register'. 
+- When any of these links are selected users are brought to the 'Sign Up' page where users only have to enter minial information to become a member, they need to enter and confirm their email, choose a username and enter and confirm their password also.
+- Once users have complete this and passsed all required form validation the user is brought to a page informing them that they must confirm their email address by following a link that has been sent to their chosen email, a toast message appears in the top right hand corner indicating this also.
+- Once this link is followed and users have confirmed their email this is reflected to the user and also appears in a toast message confirming so.
+- Users are lastly brought to the 'Log In' page so the user can log in for the first time.
+
+![Join Now](/media/sign-up.png)
+![Verify Email](/media/verify-email.png)
+![Confirm Email](/media/confirm-email.png)
+![Email Confirmed](/media/email-confirmed.png)
+![Redirect to Log In](/media/returned-to-login.png)
+
 
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
@@ -168,6 +213,7 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 
 ### Media
 - I opted with just the one background image for the entire webpage as I find now on a lot of webpages and in particular with respect to fitness and exercise pages a lot of them are jam packed with images of people illustrating how we should all want to look and the size we should be as well as what we should be doing. Pilates has a big focus on mindfulness amd it has taught me to appreciate me for who I am and to not compare myself to others. My joy in pilates comes from stretching my body and feeling strong within a movement and I couldn't find a more accurate picture than the one I had selected for my background image for the full website.
+- I opted to change the opacity of this image on other pages on the website except the homepage as I wanted the content on the other pages to be the main focus for users whereas for the homepage I was happy for the background image to be the focus. 
 
 ![Header Image](/media/pilates-site-header.webp)
 
