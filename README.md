@@ -4,7 +4,7 @@
 
 ## About
 
-Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-commerce website created at a fundamental level to sell classes to the public, in B2C (business to consumer) business model. The webpage is created to allow users to see what classes are on offer in the studio, to book classes they would like to attend using Stripe Payments, regsiter for accounts, log into accounts if they are a user, have the option to ask questions about the studio and to read a little bit of what the studio is all about as well as a link to the studios Facebook page where users can choose to follow the studio there also. The core of the ethos of this studio is being open to everyone and anyone with an interest in taking part in Pilates, whether you are a beginner or a Pilates expert everyone is welcome in Align.
+Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-commerce website created at a fundamental level to sell classes to the public, in B2C (business to consumer) business model. The webpage is created to allow users to see what classes are on offer in the studio, to book classes they would like to attend using Stripe Payments, register for accounts, log into accounts if they are a user, have the option to ask questions about the studio and to read a little bit of what the studio is all about as well as a link to the studios Facebook page where users can choose to follow the studio there also. At the moment the only marketing for this studio is solely from the Facebook page and via word of mouth from other clients of the studio. Further marketing strategies are to be implemented over time. The core of the ethos of this studio is being open to everyone and anyone with an interest in taking part in Pilates, whether you are a beginner or a Pilates expert everyone is welcome in Align.
 
 ** Please see below for note on Am I Responsive Mobile Image
 
@@ -130,7 +130,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Class Detail Mobile View](/media/class-detail-mobile.png)
 ![Class Detail Basket Toast](/media/class-detail-basket-toast.png)
 
-### Admin Functionality - Class Amendment, Deletion and Addition
+### Admin Functionality - Class Amendment, Deletion and Addition - Full CRUD Functionality
 - When the admin is signed into the studio as mentioned above in the class view and class detail and navbar different options appear for admin users. These are the ability to modify the timetable. Admins have the option to add, edit and delete classses. 
 - Admins can edit and delete classes directly from the class timetable view when they select the edit or delete option.
 - It is reflected to the admin in the form of a toast message to highlight to admins they are are editing a specific class.
@@ -297,6 +297,9 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - Similarly, when the CSS files where ran through [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) all files passed through and no errors or warnings displayed.
 
 ![CSS Testing](/media/css-testing.png)
+
+### Python Testing
+- I used Flake8 which was already installed in my workspace to test all of my python files in my project directly from the terminal.
 
 ### Lighthouse Testing
 - When the website was tested on Chrome DevTools Lighthouse testing I am pleased to say it performed well across all categories.

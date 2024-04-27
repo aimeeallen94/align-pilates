@@ -6,7 +6,6 @@ Reservation Number: {{ reservation.reservation_number }}
 Reservation Date: {{ reservation.date }}
 
 Booking Total: €{{ reservation.reservation_total }}
-Grand Total: €{{ reservation.grand_total }}
 
 As mentioned in the timetable page all classes booked now are for use in this current week if you are booking one class 
 and if you choose to book two classes that is securing your booking for this week and next week.
