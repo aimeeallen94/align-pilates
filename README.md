@@ -50,7 +50,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ### Responsive Navbar
 - The navbar I designed for Align Pilates is responsive to different screen sizes and different users who are using the webpage to allow for easiest navigation for website viewers as well as enhanced functionality for members and admin. 
 - The site logo on the navbar is also a link that can be clicked on all pages to bring users back to the homepage.
-- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter class levels available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access timetable management if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
+- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter class levels available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access add class if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
 - The basket icons reflects to users if there is anything in their basket and the current total of their basket also.
 - The mobile navbar displays for smaller screen sizes and displays as a compact menu item in the top left of smaller screens.
 - When the mobile navbar is clicked the menu options are displayed to the user. This navbar is more concise than the main navbar so as to prevent the mobile navbar being too large or to require too much scrolling on smaller screens. There is no dropwdown on the mobile navbar other than the main one.
@@ -126,6 +126,10 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Class Detail Mobile View](/media/class-detail-mobile.png)
 ![Class Detail Basket Toast](/media/class-detail-basket-toast.png)
 
+### Admin Functionality - Class Amendment, Deletion and Addition
+- When the admin is signed into the studio as mentioned above in the class view and navbar different options appear for admin users. These are the ability to modify the timetable. Admins have the option to add, edit and delete classses. 
+- 
+
 ### Basket
 - The basket page can be accessed many ways in this webpage, as mentioned above it can be accessed via the toast message when users add something to their basket, view the class detail view and also via the navbar at the top right of the homescreen on larger screens and at the end of the dropdown on mobile screens.
 - The basket provides users with a summary of what is in their basket and also presents users with the grand total for their order as well as an option to 'Remove' any items they may no longer require from their basket.
@@ -200,6 +204,16 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Confirm Email](/media/confirm-email.png)
 ![Email Confirmed](/media/email-confirmed.png)
 ![Redirect to Log In](/media/returned-to-login.png)
+
+### Contact Us
+- Within the 'Want to Join' section of the navbar there is an option for visitors to the website to fill out a 'Contact Us' form. This form allows site asks users to fill in their name, email address, contact number and a brief message where users can ask any questions or queries they may have before joining the studio.
+- The link to this contact us form is also found in the class detail view for anyone who would like to book for multiple classes in the studio.
+- This form has form validation in it and will ask prompt users to fill in any blank fields or incorrectly filled once such as the email address not filled in in an email format.
+- Users will be returned with a toast message in the top right corner of the screen once they fill out the form informing them that their message has been sent and the studio will reply to them shortly. 
+- Users are returned to the studios homepage once the form is submitted.
+
+![Contact Us Form](/media/contact-us-form.png)
+![Contact Us Form Toast Message](/media/contact-form-submitted.png)
 
 
 ## Styling 
