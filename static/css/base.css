@@ -75,12 +75,21 @@ body {
     padding-top: 20px;
 }
 
+.class-number-p {
+    background-color: #0FA3B1 !important;
+    border: solid 1px #fafafa;
+}
+
 .timetable-row {
     padding-top: 80px;
 }
 
 .class-rows {
     padding-bottom: 20px;
+}
+
+.add-class-header {
+    padding-top: 100px;
 }
 
 .classes-home-link {

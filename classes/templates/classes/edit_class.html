@@ -23,6 +23,10 @@
                 <form method="POST" action="{% url 'edit_class' class_type.id %}" class="form mb-2">
                     {% csrf_token %}
                     {{ form | crispy }}
+                    <p class="class-number-p">FYI Admins, please ensure day number is entered correctly. That is Monday = 1, Tuesday = 2 and so on.
+                        <br>
+                        This allows our clients to easily filter classes by day on our timetable!
+                    </p>
                     <div class="text-right">
                         <a class="btn btn-info" href="{% url 'classes' %}">Cancel</a>
                         <button class="btn btn-info rounded-0" type="submit">Update Class</button>

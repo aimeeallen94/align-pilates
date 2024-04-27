@@ -14,7 +14,7 @@
             <li class="nav-item dropdown" id="mobile-member-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="{% url 'add_class' %}" class="nav-item dropdown">Timetable Management</a>
+                        <a href="{% url 'add_class' %}" class="nav-item dropdown">Add Class</a>
                     {% endif %}
                     <a href="{% url 'profile' %}" class=" nav-item dropdown">My Profile</a>
                     <br>
