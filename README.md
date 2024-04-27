@@ -293,6 +293,41 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 
 ![Lighthouse Testing](/media/lighthouse-testing.png)
 
+### Manual Testing
+- I completed manual testing by going through each page on the website, clicking all links, completing all forms, adding to baskets, completing all admin functionality and overall working from start to finish on the webiste ensuring all features were working. 
+
+![Manual Testing](/media/manual-testing-1.png)
+![Manual Testing](/media/manual-testing-2.png)
+
+## Deployment 
+- I completed the deployment of my project using the Code Institute's Deployment steps in the Boutique Ado project
+
+### Elephant SQL as Database
+- As I have an account with Elephant SQL I signed into my account and opened my dashboard. 
+- From here I seleceted to 'Create New Instance'. I followed the steps here to create my instance giving it a name, a region, a tier and reviews the details provided. When happy with these I selected to Create Instance. 
+- I could now access this instance from my dashboard. I clicked on the instance I had just created and from here I copied the database URL.
+
+### Heroku 
+- As I also have an account with Heroku I logged into my Heroku account and once again navigated to my dashboard.
+- In my dashboard I selected 'New' and then chose to 'Create a new app'. I gave my app a name and selected it's region. I then clicked to 'Create App'.
+- I navigated back to my dashboard again and selected my new app I had created. I selected the Settings tab here and scrolled down to 'Reveal Config Vars'. Here I added in my DATABASE_URL in the KEY field and added my database url I had earlier copied from my Elephant SQL and pasted it in here.
+- In the deploy tab I enabled automatic deploys so that a new app would be created each time I pushed to GitHub. I had to connect to my own GitHub for this and selected the repository I wanted to use for this.
+- I generated a secret key and added it to the config vars.
+
+### Gitpod
+- Back in my terminal I installed dj_database_url==0.5.0 and psycopg2 so I could connect to my external database.
+- I used the command 'pip freeze > requirements.txt' to add these requirements to my requirements.txt file.
+- I also added import os and import dj_database_url to my settings.py file.
+- I created an if else statement in my settings.py file to connect to my external database when run in Heroku and to connect to my local one when run in Gitpod.
+- I showed and made my migrations from these changes.
+- In the terminal I created a new superuser for my external database.
+- In the terminal I installed gunicorn to act as my webserver and added this to my requirements.txt file also.
+- I created a Procfile and added the following code to it 'web: gunicorn align_pilates.wsgi:application'.
+- I logged into heroku via my terminal and temporarily disabled collectstatic.
+- I added the hostname of my heroku app and 'localhost' to my ALLOWED_HOSTS in my settings.py file.
+- I pushed these changes to GitHub and from my terminal I deployed to Heroku using 'git push heroku main'.
+- I changed my secret key in settings.py so that my secret key would be gotten from the environment.
+
 ## Technologies Used
 
 - GitHub for version control
@@ -319,6 +354,13 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - HTML
 - CSS 
 - Javascript
+
+## Problems I encountered 
+- Throughout the creation of this website I thouroughly enjoyed myself but equally I found it an extremely humbling experience.
+- I encountered numerous stumbling blocks and problems throughout this project.
+- One in particular I feel like I learned a lot from was when it came to creating my custom 404 page, I created the page fine, set up my views and urls without issue however I could not get a 404 error message to display on my webite. The only error message that would display was a 500 error which was indicating that I had an internal server error which I did not know I had!
+- Thankfully due to Chrome DevTools I could see that it was pointing to a favicon error.
+- I realised that I needed to create an icon to display on the browser tab of my website. I maange to do this and implement it so my site now has a lovely icon image and I got rid of the internal server error and I could get a 404 error to display so I could render my custom 404 page!
 
 ## Future Features to Implement
 - When time and skills allow I would like to change the option of booking pilates classes only on a weekly basis to a monthly basis on a calendar format if possible. I would like for users to be able to plan ahead and to be able to book ahead if needed.

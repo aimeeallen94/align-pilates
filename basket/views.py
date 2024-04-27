@@ -15,6 +15,7 @@ def add_to_basket(request, class_id):
 
     class_chosen = get_object_or_404(Class_Type, pk=class_id)
     quantity = int(request.POST.get('quantity'))
+    print("quantity in the basket", quantity)
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
 

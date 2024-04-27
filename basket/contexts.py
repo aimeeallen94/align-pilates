@@ -14,7 +14,8 @@ def basket_contents(request):
         if isinstance(item_data, int):
             booking = get_object_or_404(Class_Type, pk=class_id)
             class_count += item_data
-            grand_total += class_count * cost
+            grand_total += item_data * cost
+            print("grand total in context", grand_total)
             basket_items.append({
                 'class_id': class_id,
                 'class_count': item_data,
