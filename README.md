@@ -1,8 +1,12 @@
 # Align Pilates
 
+![Am I Responsive Image](/media/am-i-responsive.png)
+
 ## About
 
 Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-commerce website created at a fundamental level to sell classes to the public, in B2C (business to consumer) business model. The webpage is created to allow users to see what classes are on offer in the studio, to book classes they would like to attend using Stripe Payments, regsiter for accounts, log into accounts if they are a user, have the option to ask questions about the studio and to read a little bit of what the studio is all about as well as a link to the studios Facebook page where users can choose to follow the studio there also. The core of the ethos of this studio is being open to everyone and anyone with an interest in taking part in Pilates, whether you are a beginner or a Pilates expert everyone is welcome in Align.
+
+** Please see below for note on Am I Responsive Mobile Image
 
 [Align Pilates live webpage can be accessed here](https://align-pilates-3ba4de4e758e.herokuapp.com/)
 
@@ -254,6 +258,12 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
 ![Custom 404 Page](/media/custom-404.png)
 
+## Am I Responsive Mobile Image
+- I noted when I made my Am I Responsive Image that my mobile view header of my homepage was slightly blocked by my navbar, however it wasn't when I was looking at it locally or in production. 
+- I have inserted a screenshot below of how it appears in Chrome DevTools on smaller screens which looks perfect and the header it not being blocked by anything in this.
+
+![Mobile View Homepage](/media/mobile-view-home-page.png)
+
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
 
@@ -328,6 +338,53 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - I pushed these changes to GitHub and from my terminal I deployed to Heroku using 'git push heroku main'.
 - I changed my secret key in settings.py so that my secret key would be gotten from the environment.
 
+### AWS Amazon Web Services
+- I created an account with AWS and filled in all necessary forms. Once I logged in I navigated to the AWS Management Console and seacrhed for S3 and opened it.
+- In S3 I selected to 'Create Bucket' named it after my Heroku app, selected my region, set object ownership to ACLs enabled and Bucket Owner Preferred and unchecked the 'Block All Public Access' box and next selected to 'Create Bucket'.
+- In the bucket I just created I selected it and clicked on its properties tab and activated the bucket for static website hosting and entered in some default values for the index and error documents and saved them. 
+- I next navigated to the permissions tab and I pasted in the follows CORS Configuration 
+"[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]"
+- In the Bucket Policy Tab I selected Policy Generator. Here I selected the policy type to be 'S3 Bucket Policy', entered * for principals to allow all principals and selected the action to be GetObject. I copied the ARN from the Bucket Policy tab and pasted it in for the ARN value. I selected to 'Add Statement' and next 'Generate Policy'. I copied the policy genertated and pasted it into the Bucket Policy and added a /* to the end of the resource key to allow access to all resources in the bucket. I saved this.
+- In the Access Control List, I selected to edit and enabled list for Everyone, accepting the warning also.
+- Back in the AWS Management Console I searched for IAM and selected it. In the dropdown at the side I selected User Groups and created a group.
+- Here I next created a polciy by selected Policy > Create Policy. Here I selected Actions > Import Policy and searched for s3 and selected the AmazonS3FullAccess policy. From here I returned to copy my ARN from s3. I pasted this into the AmazonS3FullAccess policy into the resources, once on its own and the second time followed by /*. I then selected 'Review Policy', gave it a name and description and then selected to 'Create Policy'.
+- Once that policy has been created I am returned to the main policy page, from here I navigate back to the User Groups page so that I can attach the policy I just created to my group. I select my group, select 'Attach Policy', search for the policy I just created, select it and select 'Attach Policy'.
+- Once that is done I select users from the menu at the side to create a user. I select 'Add User' and name it ending in staticfiles-user and give the user programmatic access and I add that user to my group and create user.
+- To get the CSV file to download I select users, click on the user I just created and selected the 'Security Credentials' tab and scrolled down to Access Keys and selected to create access key and I selected 'Application Running Outside AWS'. I selected the create the access key and clicked to download csv when ready.
+
+### GitPod
+- Back in my GitPod terminal I installed boto and django-storages and freezed these into my requirements.txt file.
+- In my settings.py file I added storages to my installed apps.
+- Also in my settings file I added an if statement for django to use AWS S3 buckets for storages only when connected to Heroku. I added my aws bucket name in settings.py also.
+- To let django know that in production we want it to use s3 to store static files we start by creating a file called custom_storages.py in the root directory of my project. Here I imported settings from django.conf and S3BotoStorage from storages.backends.s3boto3. I created a custom class here for static and media storage.
+- In my settings.py file I wrote the code to show where we want out static and media files stored as defined in our custom_storages we just created.
+- Here I also override the urls for static and media files so that it was clear they were both to be stored in S3 in production.
+
+### Heroku 
+- Back in Heroku I returned to my app, accessed setting and reveal config vars and added my AWS access key and secret key here. I also added USE_AWS and set it it to true here.
+- In heroku I added my stripe public key, secret key and webhook secret signing key to allow for stripe to be successfully used when in production also.
+
+- I pushed my code to github and as a result of automatic deploys a new app was deployed in Heroku also.
+
+### AWS
+- As a result of my changes to GitPod static files are now being stored in AWS buckets and a static folder has been created in the bucket as a result.
+- I next created a media folder here. I uploaded my header site image to here and granted public read access to them and uploaded them.
+
+- I deployed my project to Heroku once more, tested payments, webhooks, static and media files and all were now working successfully!
+
 ## Technologies Used
 
 - GitHub for version control
@@ -347,6 +404,8 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - Crispy Forms
 - DJ-database-url
 - Oauth
+- Boto-3
+- Django Storages
 
 ## Languages Use 
 
