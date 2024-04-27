@@ -50,7 +50,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ### Responsive Navbar
 - The navbar I designed for Align Pilates is responsive to different screen sizes and different users who are using the webpage to allow for easiest navigation for website viewers as well as enhanced functionality for members and admin. 
 - The site logo on the navbar is also a link that can be clicked on all pages to bring users back to the homepage.
-- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter class levels available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access add class if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
+- The navbar on larger screen sizes has multiple dropdown menu items to allow for users to filter class levels available, to either sign in or sign up if no one is signed into the webpage, for members to access their profile if they are signed in, for admin to access 'Add Class' if they are signed in and for website visitors who are not members to choose if they would like to sign up or to contact the studio if they have any further questions. 
 - The basket icons reflects to users if there is anything in their basket and the current total of their basket also.
 - The mobile navbar displays for smaller screen sizes and displays as a compact menu item in the top left of smaller screens.
 - When the mobile navbar is clicked the menu options are displayed to the user. This navbar is more concise than the main navbar so as to prevent the mobile navbar being too large or to require too much scrolling on smaller screens. There is no dropwdown on the mobile navbar other than the main one.
@@ -59,7 +59,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Site Logo](/media/site-logo.png)
 ![Navbar Class List](/media/navbar-classes.png)
 ![Navbar Member View](/media/member-navbar-view.png)
-![Navbar Admin View](/media/admin-navbar-view.png)
+![Navbar Admin View](/media/admin-my-account-dropdown.png)
 ![Navbar Visitor View](/media/navbar-new-members.png)
 ![Navbar Basket](/media/navbar-basket.png)
 ![Mobile Navbar](/media/mobile-nav.png)
@@ -127,8 +127,41 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Class Detail Basket Toast](/media/class-detail-basket-toast.png)
 
 ### Admin Functionality - Class Amendment, Deletion and Addition
-- When the admin is signed into the studio as mentioned above in the class view and navbar different options appear for admin users. These are the ability to modify the timetable. Admins have the option to add, edit and delete classses. 
-- 
+- When the admin is signed into the studio as mentioned above in the class view and class detail and navbar different options appear for admin users. These are the ability to modify the timetable. Admins have the option to add, edit and delete classses. 
+- Admins can edit and delete classes directly from the class timetable view when they select the edit or delete option.
+- It is reflected to the admin in the form of a toast message to highlight to admins they are are editing a specific class.
+- The admin is displayed a form of all the class informaiton in fields and can edit each one as they choose.
+- Once they are happy with all fields they have amended and select to 'Update Class' a toast message appears to alert the admin that the class was edited and the admin is returned to the Class Detail view of that specific class.
+- If an admin wishes to delete a class they can do so by selecting the delete button on the timetable view of a specific class or on the class detail view of a class.
+- Admins are they displayed a toast message confirming the class was deleted in the form of a toast message.
+- If the admin wishes to add a class and does so view the navbar they are once again displayed a form with fields to complete similar to the edit form but all fields are blank here.
+- For the class day number on both the edit and add class forms there is a note to highlight to admins to assign the day number accordingly to allow for accurate sorting of classes by day for studio clients.
+- Once the admin has completed all fields and selected to add class a toast message once again is displayed to highlight to the admin that the class has been added and they are returned to the class detail of that class.
+
+![Edit Form - 1](/media/edit-class-form.png)
+![Edit Form - 2](/media/edit-class-form-2.png)
+![Editing Toast](/media/edit-toast-message.png)
+![Class Updated Toast](/media/update-class-toast.png)
+![Return to Class Detail](/media/class-detail-return.png)
+![Delete Toast](/media/delete-toast-message.png)
+![Add Class Form - 1](/media/add-class-form.png)
+![Add Class Form - 2](/media/add-class-from-2.png)
+![Add Class Toast](/media/add-class-toast.png)
+
+### Admin Panel
+- The admin panel can be accessed only by admins and this can be used to edit, add and delete classes also.
+- The admin panel has the extra functionality of being able to add more class levels which cannot be done directly from the webiste.
+- In the admin panel admins can also see all users who have accounts with Align Pilates and can also verify email addresses directly from here if required.
+- From the admin panel admins can also view all reservations made in the studio and the details of the reservation also.
+- From here admins can modify and delete and reservations as needed.
+
+![Admin Panel](/media/admin-panel-home.png)
+![Admin Panel - Level List](/media/admin-panel-levels-list.png)
+![Admin Panel - Class List](/media/admin-panel-class-view.png)
+![Admin Panel - Reservaiton List](/media/admin-panel-reservation-list.png)
+![Admin Panel - Reservation View](/media/admin-panel-reservation.png)
+![Admin Panel - Reservation View - 2](/media/admin-panel-reservation-2.png)
+
 
 ### Basket
 - The basket page can be accessed many ways in this webpage, as mentioned above it can be accessed via the toast message when users add something to their basket, view the class detail view and also via the navbar at the top right of the homescreen on larger screens and at the end of the dropdown on mobile screens.
@@ -215,6 +248,11 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Contact Us Form](/media/contact-us-form.png)
 ![Contact Us Form Toast Message](/media/contact-form-submitted.png)
 
+### Custom 404 Page
+- If a user selects a page that is no longer there, a page that is 'broken' or enter an address at the end of the site url that doesn't exist a custom 404 page displays to the user to inform them that the page they are looking for doesn't exist and a link is provided to return to the homepage from here.
+- This custom 404 page is display when a 404 error is returned by the server instead of the standard 404 error page.
+
+![Custom 404 Page](/media/custom-404.png)
 
 ## Styling 
 Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
@@ -238,17 +276,65 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 ![Facebook Page](/media/facebook-page-2.png)
 ![Facebook Page](/media/facebook-page-3.png)
 
+## Testing
+
+### HTML Testing
+- When testing the deployed website link through the [W3 HTML Validator](https://validator.w3.org/) it all passed and no errors or warnings were displayed.
+
+![HTML Testing](/media/html-testing.png)
+
+### CSS Testing
+- Similarly, when the CSS files where ran through [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) all files passed through and no errors or warnings displayed.
+
+![CSS Testing](/media/css-testing.png)
+
+### Lighthouse Testing
+- When the website was tested on Chrome DevTools Lighthouse testing I am pleased to say it performed well across all categories.
+
+![Lighthouse Testing](/media/lighthouse-testing.png)
+
 ## Technologies Used
 
-- GitHub
-- Django
-- Python
+- GitHub for version control
+- GitPod
+- Django for web framework
 - Stripe for secure payment processing
 - Heroku for Deployment
+- Google/Chrome Developer Tools
+- Lucidchart
+- Apple Numbers for Spreadsheet/Table creation
+- AWS
 
+## Django Packages Used
 
+- Gunicorn
+- Allauth
+- Crispy Forms
+- DJ-database-url
+- Oauth
+
+## Languages Use 
+
+- Python
+- HTML
+- CSS 
+- Javascript
 
 ## Future Features to Implement
 - When time and skills allow I would like to change the option of booking pilates classes only on a weekly basis to a monthly basis on a calendar format if possible. I would like for users to be able to plan ahead and to be able to book ahead if needed.
 - I would also consider putting blog posts on this webiste to enhance the community vibe of the studio and to really encourage maximum engagment from users and to increase the number of members in the studio also.
 - I would also to to add enhanced form validation for the modificaiton of and adding classes to the studio timetable so that it is not possible for admins to book two classes at the same time. 
+
+## Credits 
+- This site was insipred by Code Institures Boutique Ado project with my own twists added to it. 
+- This site was also heavily inspired by the Pilates Studio I attend in my personal life [Glow Pilates](https://glowpilates.ie/)
+- The site header image was taken from a [Vogue Artcile](https://www.vogue.com/article/reformer-pilates-guide) about pilates.
+- Colours for the website were selected from [Coloors](https://coolors.co/).
+- The font Montserrat was taken from [Google Fonts](https://fonts.google.com/).
+
+## Thank you
+- A special thanks to my mentor Luke Buchanan for his help throughout this project and course. 
+- A big thank you to Tutor Support in Code Institute for all of their help within any problems I ran into throughout this project.
+- A thank you to Student Care who were so approachable with any issues I had throughout the course and very reassuring and understanding with any problems I encountered.
+- Thank you to Amy my cohort facilitator for her kindness and encouragement thorought my PP5. 
+- Thank you to the ETB and Code Institute for providing this course and really allowing me to believe in myself and my abilities to write code and really really enjoy doing it.

@@ -16,6 +16,7 @@
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_class' %}" class="nav-item dropdown">Add Class</a>
                     {% endif %}
+                    <br>
                     <a href="{% url 'profile' %}" class=" nav-item dropdown">My Profile</a>
                     <br>
                     <a href="{% url 'account_logout' %}" class="nav-item dropdown">Logout</a>
