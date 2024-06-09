@@ -18,6 +18,7 @@ def contact_form(request):
         if form.is_valid():
             messages.success(request, 'Message Sent! \
                 We will reply to you as soon as possible.')
+            form.save()
             return redirect(reverse('home'))
         else:
             messages.error(request, 'Message not sent, please try again!')
