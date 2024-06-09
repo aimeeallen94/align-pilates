@@ -50,6 +50,41 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 - A clear footer with a link to the studios Facebook page
 - To allow users to register for an account easily if they wish to do so
 
+### Wireframes
+- Using the collabrative design tool [Figma](https://www.figma.com) I created a number of wireframes for myself to create a vision of what I wanted the webpage to look like and how best to layout the various features within the webpage. 
+
+## Homepage
+
+![Homepage Wireframe](/media/homepage-wireframe.png)
+
+## Mobile Homepage
+
+![Mobile Homepage](/media/mobile-wireframe.png)
+
+## About
+
+![About Wireframe](/media/about-wireframe.png)
+
+## Class View
+
+![Class View Wireframe](/media/class-view-wireframe.png)
+
+## Class Detail
+
+![Class Detail Wireframe](/media/class-detail-wireframe.png)
+
+## Basket
+
+![Basket Wireframe](/media/basket-wireframe.png)
+
+## Checkout
+
+![Checkout Wireframe](/media/checkout-wireframe.png)
+
+## Contact Us
+
+![Contact Us Wireframe](/media/contact-us-wireframe.png)
+
 ## Features 
 ### Responsive Navbar
 - The navbar I designed for Align Pilates is responsive to different screen sizes and different users who are using the webpage to allow for easiest navigation for website viewers as well as enhanced functionality for members and admin. 
@@ -399,6 +434,7 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - Lucidchart
 - Apple Numbers for Spreadsheet/Table creation
 - AWS
+- Figma for Wireframes
 
 ## Django Packages Used
 

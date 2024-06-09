@@ -30,13 +30,7 @@
                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
         </div></div>
-        <div class="col-3 col-lg-2 col-md-2 my-auto dropdown">
-            <a href="{% url 'classes' %}" class="dropdown-toggle" id="new-member-options" data-toggle="dropdown" 
-            aria-haspopup="true" aria-expanded="false">Want to Join?</a>
-        <div class="dropdown-menu">
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Join Now</a>
-            <a href="{% url 'contact_form' %}" class="dropdown-item">Contact Us</a>
-        </div></div>
+        <div class="col-3 col-lg-2 col-md-1 my-auto"><a href="{% url 'contact_form' %}">Contact Us</a></div>
         <div class="col-3 col-lg-1 col-md-2 my-auto">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" 
             href="{% url 'view_basket' %}">

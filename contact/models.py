@@ -1,5 +1,9 @@
 from django.db import models
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
 
 class ContactDetails(models.Model):
     """
@@ -9,3 +13,6 @@ class ContactDetails(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     query = models.TextField(max_length=500)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
+
+    def __str__(self):
+        return self.full_name
