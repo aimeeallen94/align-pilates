@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-from .models import Class_Type, Level
-from .forms import ClassTypeForm
+from .models import Class_Type, Level, Ratings
+from .forms import ClassTypeForm, RatingsForm
 
 
 def all_classes(request):
@@ -64,10 +64,24 @@ def class_info(request, class_type_id):
     """ A view to show the class descriptions page """
 
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
+    ratings_form = RatingsForm()
 
     context = {
         'class_type': class_type,
+        'ratings_form' : ratings_form,
     }
+
+    if request.method == 'POST':
+        ratings_form = RatingsForm(request.POST)
+        if ratings_form.is_valid():
+            messages.success(request, 'Thank you so \
+                much for leaving a review!.')
+            ratings_form.save()
+            return redirect(reverse('home'))
+        else:
+            messages.error(request, 'Message not sent, please try again!')
+    else:
+        ratings_form = RatingsForm()
 
     return render(request, 'classes/class_type.html', context)
 

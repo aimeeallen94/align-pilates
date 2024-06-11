@@ -73,5 +73,42 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8 offset-1">
+                <div class="row">
+                    <div class="h-100">
+                        <h3>Ratings and Reviews</h3>
+                        <br>
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            {{ ratings_form | crispy }}
+                            <button id="submit-button" class="btn btn-info">
+                                <span class="font-weight-bold">Submit</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8 offset-1">
+                <div class="row">
+                    <h3>Reviews</h3>
+                    {% for rating in ratings_form %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                                <p class="card-text">{{ rating.author }}</p>
+                                <p class="card-text">{{ rating.class_name }}</p>
+                                <p class="card-text">{{ rating.rating }}</p>
+                                <p class="card-text">{{ rating.review }}</p>
+                                <p class="card-text">{{ rating.date }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
