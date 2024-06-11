@@ -15,7 +15,6 @@ class ContactDetails(models.Model):
     phone_number = models.CharField(max_length=20, null=False, blank=False)
 
 
-@receiver(post_save, sender=User)
+@receiver(post_save, sender=ContactDetails)
 def send_contact_form(sender, instance, created, **kwargs):
-    instance.contactdetails.post_save(instance.full_name, instance.email, instance.query, instance.phone_number)
-
+    instance.contact_details.post_save(instance.full_name, instance.email, instance.query, instance.phone_number)
