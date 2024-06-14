@@ -26,7 +26,9 @@
                             <p class="text">{{ class_type.time }}</p>
                             <p class="text">{{ class_type.day }}</p>
                             {% if class_type.rating %}
-                                <small><i class="fas fa-star mr-1"></i>{{ class_type.rating }} / 5</small>
+                                {% for rating in ratings %}
+                                <small><i class="fas fa-star mr-1"></i>{{ rating.rating }} / 5</small>
+                                {% endfor %}
                             {% else %}
                                 <small class="text-muted">No Rating</small>
                             {% endif %}
@@ -90,44 +92,50 @@
                 </div>    
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="container col-12">
-                <div class="col-12 col-md-8 col-lg-8 offset-1">
-                    <div class="row">
-                        {% for rating in ratings %}
-                            <div class="card ratings-cards bg-info m-2 border border-white rounded">
-                                <div class="card-header">
-                                    Praise for...
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text">{{ rating.class_name }}</p>
-                                    <p class="card-text"> <i class="fas fa-star mr-1"></i>{{ rating.rating }} </p>
-                                    <p class="card-text blockquote font-italic">"{{ rating.review }}"</p>
-                                    <p class="card-text font-weight-light">- {{ rating.author }}</p>
-                                    <p class="card-text font-weight-light">{{ rating.date }}</p>
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-10 offset-1">
+                        <div class="row">
+                            {% for rating in ratings %}
+                            <div class="card-group">
+                                <div class="card ratings-cards bg-info m-3 border border-white rounded">
+                                    <div class="card-header">
+                                        Praise for...
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{{ rating.class_name }}</p>
+                                        <p class="card-text"> <i class="fas fa-star mr-1"></i>{{ rating.rating }} </p>
+                                        <p class="card-text blockquote font-italic">"{{ rating.review }}"</p>
+                                        <p class="card-text font-weight-light">- {{ rating.author }}</p>
+                                        <p class="card-text font-weight-light">{{ rating.date }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                                <div class="col-12 d-sm-none mb-5">
-                                    <br>
-                                </div>
-                            {% endif %}                        
-                            {% if forloop.counter|divisibleby:2 %}
-                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                    <br>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:3 %}
-                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                    <br>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:4 %}
-                                <div class="col-12 d-none d-xl-block mb-5">
-                                    <br>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                            {% if forloop.counter|divisibleby:1 %}
+                                    <div class="col-12 d-sm-none mb-5">
+                                        <br>
+                                    </div>
+                                {% endif %}                        
+                                {% if forloop.counter|divisibleby:2 %}
+                                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                        <br>
+                                    </div>
+                                {% endif %}
+                                {% if forloop.counter|divisibleby:3 %}
+                                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                        <br>
+                                    </div>
+                                {% endif %}
+                                {% if forloop.counter|divisibleby:4 %}
+                                    <div class="col-12 d-none d-xl-block mb-5">
+                                        <br>
+                                    </div>
+                                {% endif %}
+                                {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>

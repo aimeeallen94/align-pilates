@@ -1,5 +1,9 @@
 from django import forms
 from .models import Class_Type, Level, Ratings
+from django.db import models
+from django.db.models import PositiveIntegerField, Model
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.exceptions import ValidationError
 
 
 class ClassTypeForm(forms.ModelForm):
@@ -18,10 +22,19 @@ class ClassTypeForm(forms.ModelForm):
             field.widget.attrs['class'] = 'rounded-0'
 
 
+def ratingValidator(rating):
+    print(rating)
+    if rating < 0 or rating > 5:
+        raise ValidationError("Value must be between 0 and 5")
+
+
 class RatingsForm(forms.ModelForm):
+    rating = forms.IntegerField(validators=[ratingValidator])
+
     class Meta:
         model = Ratings
         fields = ('author', 'class_name', 'rating', 'review',)
+
 
     def __init__(self, *args, **kwargs):
         """
