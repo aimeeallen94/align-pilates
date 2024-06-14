@@ -65,15 +65,16 @@ def class_info(request, class_type_id):
     """ View also displays ratings form """
 
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
-    ratings = Ratings.objects.all()
+    ratings = Ratings.objects.filter(class_name=class_type)
     ratings_form = RatingsForm()
-    average = Ratings.objects.aggregate(avg=Avg('rating'))
-    print(average)
+    average = ratings.aggregate(Avg('rating'))
+    average_rating = average['rating__avg']
 
     context = {
         'class_type': class_type,
         'ratings': ratings,
         'ratings_form' : ratings_form,
+        'average_rating': average_rating,
     }
 
     if request.method == 'POST':

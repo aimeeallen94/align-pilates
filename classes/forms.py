@@ -44,7 +44,7 @@ class RatingsForm(forms.ModelForm):
         placeholders = {
             'author': 'Author',
             'class_name': 'Class Name',
-            'rating': 'Rating',
+            'rating': 'Rating (Please select from 1 - 5 stars)',
             'review': 'Review',
             'date': 'Date',
         }

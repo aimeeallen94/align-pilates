@@ -25,8 +25,6 @@
                                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                     <option value="time_asc" {% if current_sorting == 'time_asc' %}selected{% endif %}>Time (early to late)</option>
                                     <option value="time_desc" {% if current_sorting == 'time_desc' %}selected{% endif %}>Time (late to early)</option>
-                                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                     <option value="teacher_asc" {% if current_sorting == 'teacher_asc' %}selected{% endif %}>Teacher (A-Z)</option>
                                     <option value="teacher_desc" {% if current_sorting == 'teacher_desc' %}selected{% endif %}>Teacher (Z-A)</option>
                                     <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A-Z)</option>
@@ -66,7 +64,6 @@
                                             Arrange By <i class="far fa-arrow-alt-circle-down"></i></a>
                                         <div class="dropdown-menu class-sort-navbar" aria-labelledby="all-classes-link">
                                             <a href="{% url 'classes' %}?sort=time&direction=asc" class="dropdown-item">By Time</a>
-                                            <a href="{% url 'classes' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
                                             <a href="{% url 'classes' %}?sort=teacher&direction=asc" class="dropdown-item ">By Teacher</a>
                                             <a href="{% url 'classes' %}?sort=level&direction=asc" class="dropdown-item ">By Level</a>
                                             <a href="{% url 'classes' %}?sort=day_number&direction=asc" class="dropdown-item ">By Day</a>
@@ -95,11 +92,6 @@
                                 <p class="card-text">{{ class.time }}</p>
                                 <p class="card-text">{{ class.day }}</p>
                                 <p class="card-text">€{{ class.cost }}</p>
-                                {% if class.rating %}
-                                <p class="card-text"><i class="fas fa-star mr-1"></i> {{ class.rating }} / 5</p>
-                                {% else %}
-                                <p class="card-text">No Rating</p>
-                                {% endif %}
                             </div>
                             {% if request.user.is_superuser %}
                                 <small class="ml-3">
