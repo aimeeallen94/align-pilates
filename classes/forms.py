@@ -23,7 +23,6 @@ class ClassTypeForm(forms.ModelForm):
 
 
 def ratingValidator(rating):
-    print(rating)
     if rating < 0 or rating > 5:
         raise ValidationError("Value must be between 0 and 5")
 

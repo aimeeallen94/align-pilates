@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Avg
 
 from .models import Class_Type, Level, Ratings
 from .forms import ClassTypeForm, RatingsForm
@@ -67,6 +67,8 @@ def class_info(request, class_type_id):
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
     ratings = Ratings.objects.all()
     ratings_form = RatingsForm()
+    average = Ratings.objects.aggregate(avg=Avg('rating'))
+    print(average)
 
     context = {
         'class_type': class_type,
