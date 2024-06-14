@@ -97,7 +97,8 @@ body {
     text-decoration: underline;
 }
 
-.class-info-container {
+.class-info-container, 
+.ratings-form-container {
     padding-top: 100px;
     background-color: #343a40;
     opacity: 0.9;

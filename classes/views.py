@@ -62,12 +62,15 @@ def all_classes(request):
 
 def class_info(request, class_type_id):
     """ A view to show the class descriptions page """
+    """ View also displays ratings form """
 
     class_type = get_object_or_404(Class_Type, pk=class_type_id)
+    ratings = Ratings.objects.all()
     ratings_form = RatingsForm()
 
     context = {
         'class_type': class_type,
+        'ratings': ratings,
         'ratings_form' : ratings_form,
     }
 
@@ -77,7 +80,7 @@ def class_info(request, class_type_id):
             messages.success(request, 'Thank you so \
                 much for leaving a review!.')
             ratings_form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('classes'))
         else:
             messages.error(request, 'Message not sent, please try again!')
     else:

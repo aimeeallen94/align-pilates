@@ -73,39 +73,61 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+    </div>
+    <div class="container ratings-form-container">
+        <div class="row rating-form-row">
             <div class="col-12 col-md-8 col-lg-8 offset-1">
-                <div class="row">
-                    <div class="h-100">
-                        <h3>Ratings and Reviews</h3>
-                        <br>
-                        <form class="form" method="POST">
-                            {% csrf_token %}
-                            {{ ratings_form | crispy }}
-                            <button id="submit-button" class="btn btn-info">
-                                <span class="font-weight-bold">Submit</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                <div class="h-100">
+                    <h3>Ratings and Reviews</h3>
+                    <br>
+                    <form class="form" method="POST">
+                        {% csrf_token %}
+                        {{ ratings_form | crispy }}
+                        <button id="submit-button" class="btn btn-info">
+                            <span class="font-weight-bold">Submit</span>
+                        </button>
+                    </form>
+                </div>    
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-8 col-lg-8 offset-1">
-                <div class="row">
-                    <h3>Reviews</h3>
-                    {% for rating in ratings_form %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <p class="card-text">{{ rating.author }}</p>
-                                <p class="card-text">{{ rating.class_name }}</p>
-                                <p class="card-text">{{ rating.rating }}</p>
-                                <p class="card-text">{{ rating.review }}</p>
-                                <p class="card-text">{{ rating.date }}</p>
+            <div class="container col-12">
+                <div class="col-12 col-md-8 col-lg-8 offset-1">
+                    <div class="row">
+                        {% for rating in ratings %}
+                            <div class="card ratings-cards bg-info m-2 border border-white rounded">
+                                <div class="card-header">
+                                    Praise for...
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ rating.class_name }}</p>
+                                    <p class="card-text"> <i class="fas fa-star mr-1"></i>{{ rating.rating }} </p>
+                                    <p class="card-text blockquote font-italic">"{{ rating.review }}"</p>
+                                    <p class="card-text font-weight-light">- {{ rating.author }}</p>
+                                    <p class="card-text font-weight-light">{{ rating.date }}</p>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% if forloop.counter|divisibleby:1 %}
+                                <div class="col-12 d-sm-none mb-5">
+                                    <br>
+                                </div>
+                            {% endif %}                        
+                            {% if forloop.counter|divisibleby:2 %}
+                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                    <br>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:3 %}
+                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                    <br>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:4 %}
+                                <div class="col-12 d-none d-xl-block mb-5">
+                                    <br>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
