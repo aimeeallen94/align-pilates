@@ -25,7 +25,7 @@ class Class_TypeAdmin(admin.ModelAdmin):
 
 class RatingsAdmin(admin.ModelAdmin):
     readonly_fields = ('date',)
-    
+
     fields = ('author', 'class_name', 'rating', 'review', 'date',)
 
     ordering = ('-date',)

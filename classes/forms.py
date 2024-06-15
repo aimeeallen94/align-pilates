@@ -1,8 +1,5 @@
 from django import forms
 from .models import Class_Type, Level, Ratings
-from django.db import models
-from django.db.models import PositiveIntegerField, Model
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.exceptions import ValidationError
 
 
@@ -33,7 +30,6 @@ class RatingsForm(forms.ModelForm):
     class Meta:
         model = Ratings
         fields = ('author', 'class_name', 'rating', 'review',)
-
 
     def __init__(self, *args, **kwargs):
         """

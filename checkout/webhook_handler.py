@@ -26,7 +26,8 @@ class StripeWH_Handler:
             {'reservation': reservation})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'reservation': reservation, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+            {'reservation': reservation,
+                'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
             subject,

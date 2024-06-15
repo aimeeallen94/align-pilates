@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Level(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -28,7 +29,8 @@ class Class_Type(models.Model):
 
 class Ratings(models.Model):
     author = models.CharField(max_length=254, null=False, blank=False)
-    class_name = models.ForeignKey(Class_Type, null=False, blank=False, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField(null=False, blank=False)
+    class_name = models.ForeignKey(Class_Type, null=False, blank=False,
+                                   on_delete=models.CASCADE)
+    rating = models.IntegerField(null=False, blank=False)
     review = models.TextField(max_length=1000)
     date = models.DateTimeField(auto_now_add=True)

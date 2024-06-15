@@ -73,7 +73,7 @@ def class_info(request, class_type_id):
     context = {
         'class_type': class_type,
         'ratings': ratings,
-        'ratings_form' : ratings_form,
+        'ratings_form': ratings_form,
         'average_rating': average_rating,
     }
 
