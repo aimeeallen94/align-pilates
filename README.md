@@ -24,7 +24,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
     #### Website Vistor
     - From the aspect of a visitor to the webapge I wanted the website to be appealing to the eye, easy to navigate and open to users who would like to join to reach out and contact the studio also. 
-    - I made the conscious decision of allow 'non members' to be able to book in for classes without having an account as for me in my day to day life I am often put off attending things when I have to fill out forms and provide a lot of personal information before I can attend something that I may only hvae the intention of attending just once.
+    - I made the conscious decision of allow 'non members' to be able to book in for classes as well as being able to leave reviews without having an account as for me in my day to day life I am often put off attending things when I have to fill out forms and provide a lot of personal information before I can attend something that I may only have the intention of attending just once.
 
     #### Site Owner
     - I did want the site owner/admin to be able to have enhanced functionality of being able to schedule classes, edit classes and delete classes as they so needed.
@@ -99,7 +99,6 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Navbar Class List](/media/navbar-classes.png)
 ![Navbar Member View](/media/member-navbar-view.png)
 ![Navbar Admin View](/media/admin-my-account-dropdown.png)
-![Navbar Visitor View](/media/navbar-new-members.png)
 ![Navbar Basket](/media/navbar-basket.png)
 ![Mobile Navbar](/media/mobile-nav.png)
 ![Mobile Navbar Contents](/media/mobile-navbar-contents.png)
@@ -278,7 +277,7 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Redirect to Log In](/media/returned-to-login.png)
 
 ### Contact Us
-- Within the 'Want to Join' section of the navbar there is an option for visitors to the website to fill out a 'Contact Us' form. This form allows site asks users to fill in their name, email address, contact number and a brief message where users can ask any questions or queries they may have before joining the studio.
+- On the navbar there is an option for visitors to the website to fill out a 'Contact Us' form. This form allows site asks users to fill in their name, email address, contact number and a brief message where users can ask any questions or queries they may have before joining the studio.
 - The link to this contact us form is also found in the class detail view for anyone who would like to book for multiple classes in the studio.
 - This form has form validation in it and will ask prompt users to fill in any blank fields or incorrectly filled once such as the email address not filled in in an email format.
 - Users will be returned with a toast message in the top right corner of the screen once they fill out the form informing them that their message has been sent and the studio will reply to them shortly. 
