@@ -18,7 +18,6 @@ class Class_TypeAdmin(admin.ModelAdmin):
         'teacher',
         'day',
         'time',
-        'rating',
         'cost',
         'day_number',
     )
