@@ -147,9 +147,13 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Back to Top Button](/media/back-to-top-button.png)
 
 ### Class Detail View
-- Once the 'Book Now & More Info' button is clicked fomr the Classes Page users are brought to the Class Detail View.
+- Once the 'Book Now & More Info' button is clicked from the Classes Page users are brought to the Class Detail View.
 - This is page created specifically for each different class available in the studio where it provides a more detailed description of each class to allow users to decide if a specific class is suitable for them and if they would like to attend. 
-- This page also consists of other information about each class such as class level, teacher, cost, time, day and rating in a very clearly laid out and understandable format.
+- Also available on this page is the option for users to leave a review for a specific class as well as the option to read any reviews that have been left for this class also.
+- The ratings and review form consists of the following fields: class name, star rating, review and author.
+- This form consists of validation that only allows users to submit a review with a star rating of 0 to 5. It also consists of validation that the form cannot be submitted unless all fields have been completed.
+- The reviews are displayed in a card format and have the information clearly displayed consisting of class name, review, star rating, author and date. 
+- This page also consists of other information about each class such as class level, teacher, cost, time, day and an average overall rating (calculated as an average figure form users ratings or displaying 'No Rating' if no ratings have been left) in a very clearly laid out and understandable format.
 - This page also provides a message to people who are booking into classes in the studio alerting them to the fact that currently classes are only available to be booked on a weekly basis and that booking classes in advance of a week or longer is not currently possible in the studio. The note does advise users to complete the 'Contact Form' which is linked in the note, that if they would like to book further in advance and the studio would gladly oblige.
 - The quantity is set here to 1 and this quantity cannot be increased or decreaesed by clicking the up or down button on the quantity arrows.
 - At the end of the class detail view there is a three separate buttons, one to allow users to select to 'Continue Browsing' which brings users back to the class timetable view, a button to 'Book Now' which when clicked adds that specific class to the users basket and the last button 'Checkout' which allows users to go the the checkout and from there on to proceed to payment.
@@ -160,9 +164,14 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
 ![Class Detail View](/media/class-detail-view.png)
 ![Class Detail Buttons](/media/class-detail-buttons.png)
-![Clas Detail Link](/media/class-detail-link.png)
+![Class Detail Link](/media/class-detail-link.png)
 ![Class Detail Mobile View](/media/class-detail-mobile.png)
 ![Class Detail Basket Toast](/media/class-detail-basket-toast.png)
+![Rating Form](/media/rating-form.png)
+![Rating Cards](/media/rating-cards.png)
+![Rating Form Validation Blank Field](/media/rating-form-validation.png)
+![Rating Form Validation - Success Toast](/media/rating-form-success-toast.png)
+![Rating Form - Error Message](/media/rating-form-error-message.png)
 
 ### Admin Functionality - Class Amendment, Deletion and Addition - Full CRUD Functionality
 - When the admin is signed into the studio as mentioned above in the class view and class detail and navbar different options appear for admin users. These are the ability to modify the timetable. Admins have the option to add, edit and delete classses. 
@@ -183,11 +192,13 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Return to Class Detail](/media/class-detail-return.png)
 ![Delete Toast](/media/delete-toast-message.png)
 ![Add Class Form - 1](/media/add-class-form.png)
-![Add Class Form - 2](/media/add-class-from-2.png)
+![Add Class Form - 2](/media/add-class-form-2.png)
 ![Add Class Toast](/media/add-class-toast.png)
 
 ### Admin Panel
 - The admin panel can be accessed only by admins and this can be used to edit, add and delete classes also.
+- The admin can also see the details of the Contact Us Form which is available to be completed by any visitor of the website. 
+- Also in the admin panel site owners can modify and delete any ratings as needed.
 - The admin panel has the extra functionality of being able to add more class levels which cannot be done directly from the webiste.
 - In the admin panel admins can also see all users who have accounts with Align Pilates and can also verify email addresses directly from here if required.
 - From the admin panel admins can also view all reservations made in the studio and the details of the reservation also.
@@ -199,6 +210,9 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Admin Panel - Reservaiton List](/media/admin-panel-reservation-list.png)
 ![Admin Panel - Reservation View](/media/admin-panel-reservation.png)
 ![Admin Panel - Reservation View - 2](/media/admin-panel-reservation-2.png)
+![Admin Panel - Ratings List](/media/admin-panel-ratings-list.png)
+![Admin Panel - Ratings Detils](/media/admin-panel-ratings-details.png)
+![Admin Panel - Contact Us Details](/media/contact-us-details-admin-panel.png)
 
 
 ### Basket
@@ -282,9 +296,11 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 - This form has form validation in it and will ask prompt users to fill in any blank fields or incorrectly filled once such as the email address not filled in in an email format.
 - Users will be returned with a toast message in the top right corner of the screen once they fill out the form informing them that their message has been sent and the studio will reply to them shortly. 
 - Users are returned to the studios homepage once the form is submitted.
+- Users completed forms are saved to the admin panel as 'Contact Details' for the site owner to be able to view and take action upon these queries from here. 
 
 ![Contact Us Form](/media/contact-us-form.png)
 ![Contact Us Form Toast Message](/media/contact-form-submitted.png)
+![Contact Us Details Admin Panel](/media/contact-us-details-admin-panel.png)
 
 ### Custom 404 Page
 - If a user selects a page that is no longer there, a page that is 'broken' or enter an address at the end of the site url that doesn't exist a custom 404 page displays to the user to inform them that the page they are looking for doesn't exist and a link is provided to return to the homepage from here.
@@ -458,6 +474,7 @@ Overall, I am a big fan of less is more with styling so I tried to adopt and mai
 - One in particular I feel like I learned a lot from was when it came to creating my custom 404 page, I created the page fine, set up my views and urls without issue however I could not get a 404 error message to display on my webite. The only error message that would display was a 500 error which was indicating that I had an internal server error which I did not know I had!
 - Thankfully due to Chrome DevTools I could see that it was pointing to a favicon error.
 - I realised that I needed to create an icon to display on the browser tab of my website. I maange to do this and implement it so my site now has a lovely icon image and I got rid of the internal server error and I could get a 404 error to display so I could render my custom 404 page!
+- I also encountered an issue on the admin panel that when users made a booking on the admin panel two reservations were displaying, only one of these had a stripe PID, only one email was sent to users to confirm the booking and only one stripe payment was processed. I delved into this issue and found after many hours of troubleshooting that I had had a typo in a variable name.
 
 ## Future Features to Implement
 - When time and skills allow I would like to change the option of booking pilates classes only on a weekly basis to a monthly basis on a calendar format if possible. I would like for users to be able to plan ahead and to be able to book ahead if needed.
