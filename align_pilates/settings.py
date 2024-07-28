@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
                 '8000-aimeeallen9-alignpilate-iwcfd67hn0r.ws-eu110.gitpod.io',
@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
                 'localhost', 'align-pilates-3ba4de4e758e.herokuapp.com',
                 '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu110.gitpod.io',
                 '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu114.gitpod.io',
+                '8000-aimeeallen9-alignpilate-e8zdppmrwty.ws-eu115.gitpod.io',
                 ]
 
 

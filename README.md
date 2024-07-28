@@ -315,13 +315,16 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 ![Mobile View Homepage](/media/mobile-view-home-page.png)
 
 ## Styling 
-Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage.
+- Overall, I am a big fan of less is more with styling so I tried to adopt and maintain that approach in the styling of this webpage. 
+- As mentioned above in my spare time I attend a local Pilates studio twice a week which I absolutely adore so I did take a lot of my inspiriation from the studio I go to both from their studio and website. Their studio and webpage are both very simply designed and maintain consistent styling throughout so I tried to echo that in my design of this website.
+- I am also just finishing renovating a house and for this project I took a very deep dive into deisgn and style ideas for a home and the more I looked the more I was convinced that I am a fan of less is more and to also maintain more traditional styling so that what I create will definitely stand the test of time and not look old and dated in a matter of months.
 
 ### Colours
 - As I had mentioned I am very much in awe of the Pilates Studio I attend I tried to choose colours similar to their webpage as well as colours that are present in the studio. I find these colours calming and very easy to read. I chose three colours at the start and used a mixture of those throughout the webpage. I used [Coloors](https://coolors.co/) to help me create my colour palette.
+- I wanted all of the colours to clearly contrast against one another but was not happy to use a standard black and white to contrast against the teal colour I chose so I took my time to select an off white and a dark grey to provide an appropriate contrast.
 
 ### Fonts 
-- I used [Google Fonts](https://fonts.google.com/) to help me select a font for my webpage and also to be where I found my font of choice for the webpage. I selected Montserrat as the font for the webpage as I believe it to be elegant and very clearly read also.
+- I used [Google Fonts](https://fonts.google.com/) to help me select a font for my webpage and also to be where I found my font of choice for the webpage. I selected Montserrat as the font for the webpage as I believe it to be elegant and very clearly read also. I wanted users to be able to easily read all content on the webpage so I am very happy with the font I selected. I wanted it to be a timeless font so avoiding using something that appeared to be a current trend at the time when this website was created.
 
 ### Media
 - I opted with just the one background image for the entire webpage as I find now on a lot of webpages and in particular with respect to fitness and exercise pages a lot of them are jam packed with images of people illustrating how we should all want to look and the size we should be as well as what we should be doing. Pilates has a big focus on mindfulness amd it has taught me to appreciate me for who I am and to not compare myself to others. My joy in pilates comes from stretching my body and feeling strong within a movement and I couldn't find a more accurate picture than the one I had selected for my background image for the full website.
