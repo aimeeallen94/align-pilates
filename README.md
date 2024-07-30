@@ -361,6 +361,10 @@ Align Pilates is a Reformer Pilates Studio based in Limerick City. It is an e-co
 
 ### Manual Testing
 - I completed manual testing by going through each page on the website, clicking all links, completing all forms, adding to baskets, completing all admin functionality and overall working from start to finish on the webiste ensuring all features were working. 
+- I completed booking of classes entering correct and incorrect information and received approoriate responses for each situation.
+- I filled in reviews of classes and ensured they displayed as expected.
+- I resolved a 500 error displaying when the 'Contact Us' form was completed and ensure that issue did not occur again.
+- Further manual testing details can be seen in the attached images.
 
 ![Manual Testing](/media/manual-testing-1.png)
 ![Manual Testing](/media/manual-testing-2.png)
